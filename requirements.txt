@@ -1,0 +1,6 @@
+# Framework used
+Django
+
+# Manage virtual environment for easy dependency management
+virtualenvwrapper-win; platform_system == "Windows"
+virtualenvwrapper; platform_system != "Windows"

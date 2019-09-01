@@ -1,23 +1,33 @@
 {% extends 'posts_template.html' %}
 
-{% block title %} post.title {% endblock %}
+{% load markdown_extras %}
+
+{% block title %} {{post.title}} {% endblock %}
 
 {% block content %}
 
 <div class="col s12 m12 l12">
         <div class="card">
+            <h1>{{post.title}}</h1>
+            <h5>{{post.subheading}}</h5>
             <div class="card-image waves-effect waves-block waves-light">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="display:block; margin-left:auto; margin-right:auto; max-height:500px; max-width:500px;">
             </div>
             <div class="card-content">
-                <p class="flow-text">{{post.body}}</p>
+                <div id="markdown-content">
+                    {{post.content|markdown|safe}}
+                </div>
+                </br>
+                <a href="{{post.github_source}}">Link to source</a>
             </div>
             
             <div class="card-action">
-            Post created: {{post.created}}
+            Language(s): <p>{% for language in post.languages %}{{language}} {% endfor %}</p>
+            Post created: {{post.created}} Last Updated {{post.last_modified}}
             </div>
         </div>
       </div>
 <a class="btn green darken-3" href="/posts" style="margin:7px;">Go back to all posts</a>
 
 {% endblock content %}
+

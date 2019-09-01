@@ -46,3 +46,21 @@ Alternatively you can individually install the dependencies, you will need:
 Optional:
 
 - virtualenv or virtualenvwrapper(macOS/linux)/virtualenvwrapper-win(Windows); Highly recommended to segment your python environment and avoid version conflicts (See virtual environment section)
+
+## Getting production ready
+
+### Secret Key
+
+Note that Django requires the use of a secret key to run. This key should be kept secret (obviously), as such I have setup this repository to **NOT** commit files called ```secretkey.txt```. If you plan to copy the source code and use it in production [generate a secret key](https://randomkeygen.com/) and put it in a ```secretkey.txt``` file in the ```/canadiancoding``` directory.
+
+### Debug mode
+
+Disable debug mode in ```/canadiancoding/settings.py``` before using in production.
+
+### Allowed host
+
+Add the necessary host domain name to ALLOWED_HOSTS in ```/canadiancoding/settings.py```.
+
+## Running
+
+Change directory into the canadiancoding directory ```cd /canadaiancoding``` then run ```python manage.py runserver```.

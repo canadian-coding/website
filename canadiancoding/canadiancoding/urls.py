@@ -25,7 +25,9 @@ from django.conf.urls.static import static
 # TODO: add overall index route
 
 urlpatterns = [
+    path("jet/", include("jet.urls", "jet")),
     path('admin/', admin.site.urls),
     path('posts/', include('posts.urls')),
     path("", include('pages.urls')),
+    path('markdownx/', include('markdownx.urls')),
 ]

@@ -1,0 +1,199 @@
+{% extends 'posts_template.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+
+<h1 class="center-align"> Posts </h1>
+
+<div class="row">
+{% for post in posts %}
+
+      <div class="col s12 m12 l4">
+            <div class="card horizontal">
+                <div class="card-image valign-wrapper">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="max-height:225px;">
+                </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h3>{{post.title}}</h3>
+                            <p class="flow-text body-preview">{{post.body}}</p>
+                        </div>
+                        <div class="card-action">
+                        <p><a href="/posts/details/{{post.id}}">Link to post</a></p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+{% endfor %}
+</div>
+
+    <!--Option 1-->
+    <div class="col s12 m12 l4">
+        <div class="card horizontal">
+            <div class="card-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="max-height:225px;">
+            </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h3>Module Showcase: locust</h3>
+                        <p class="flow-text">Locust is a python based load testing framework, it is incredibly useful to do load testing before an application launch to ensure stability for your users once many of them get into an application.</p>
+                    </div>
+                    <div class="card-action">
+                    <a href="#">Link to post</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="col s12 m12 l4">
+        <div class="card horizontal">
+            <div class="card-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="max-height:225px;">
+            </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h3>Module Showcase: locust</h3>
+                        <p class="flow-text">Locust is a python based load testing framework, it is incredibly useful to do load testing before an application launch to ensure stability for your users once many of them get into an application.</p>
+                    </div>
+                    <div class="card-action">
+                    <a href="#">Link to post</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="col s12 m12 l4">
+        <div class="card horizontal">
+            <div class="card-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="max-height:225px;">
+            </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h3>Module Showcase: locust</h3>
+                        <p class="flow-text">Locust is a python based load testing framework, it is incredibly useful to do load testing before an application launch to ensure stability for your users once many of them get into an application.</p>
+                    </div>
+                    <div class="card-action">
+                    <a href="#">Link to post</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <!--Option 2-->
+    <div class="row">
+
+      <div class="col s12 m12 l4">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="display:block; margin-left:auto; margin-right:auto; max-height:225px; max-width:225px;">
+            </div>
+            <div class="card-content center-align">
+                <span class="card-title activator grey-text text-darken-4 valign-wrapper">Module Showcase; locust<ion-icon name="more"></ion-icon></span>
+                <p><a href="#">Link to post</a></p>
+            </div>
+            <div class="card-reveal center-align valign-wrapper">
+                <span class="card-title grey-text text-darken-4 center-align">Module Showcase; locust<ion-icon name="close"></ion-icon></span>
+                <p class="flow-text">Locust is a python based load testing framework, it is incredibly useful to do load testing before an application launch to ensure stability for your users once many of them get into an application.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col s12 m12 l4">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="display:block; margin-left:auto; margin-right:auto; max-height:225px; max-width:225px;">
+            </div>
+            <div class="card-content center-align">
+                <span class="card-title activator grey-text text-darken-4 valign-wrapper">Module Showcase; locust<ion-icon name="more"></ion-icon></span>
+                <p><a href="#">Link to post</a></p>
+            </div>
+            <div class="card-reveal center-align valign-wrapper">
+                <span class="card-title grey-text text-darken-4 center-align">Module Showcase; locust<ion-icon name="close"></ion-icon></span>
+                <p class="flow-text">Locust is a python based load testing framework, it is incredibly useful to do load testing before an application launch to ensure stability for your users once many of them get into an application.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col s12 m12 l4">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="display:block; margin-left:auto; margin-right:auto; max-height:225px; max-width:225px;">
+            </div>
+            <div class="card-content center-align">
+                <span class="card-title activator grey-text text-darken-4 valign-wrapper">Module Showcase; locust<ion-icon name="more"></ion-icon></span>
+                <p><a href="#">Link to post</a></p>
+            </div>
+            <div class="card-reveal center-align valign-wrapper">
+                <span class="card-title grey-text text-darken-4 center-align">Module Showcase; locust<ion-icon name="close"></ion-icon></span>
+                <p class="flow-text">Locust is a python based load testing framework, it is incredibly useful to do load testing before an application launch to ensure stability for your users once many of them get into an application.</p>
+            </div>
+        </div>
+      </div>
+      
+    </div>
+
+      
+    <!--Option 3-->
+    <div class="row">
+        <div class="col s12 m12 l4">
+            <div class="card horizontal">
+                <div class="card-image valign-wrapper">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="max-height:225px;">
+                </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h3>Module Showcase: locust</h3>
+                            <p class="flow-text">Locust is a python based load testing framework, it is incredibly useful to do load testing before an application launch to ensure stability for your users once many of them get into an application.</p>
+                        </div>
+                        <div class="card-action">
+                        <a href="#">Link to post</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="col s12 m12 l4">
+            <div class="card horizontal">
+                <div class="card-image valign-wrapper">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="max-height:225px;">
+                </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h3>Module Showcase: locust</h3>
+                            <p class="flow-text">Locust is a python based load testing framework, it is incredibly useful to do load testing before an application launch to ensure stability for your users once many of them get into an application.</p>
+                        </div>
+                        <div class="card-action">
+                        <a href="#">Link to post</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="col s12 m12 l4">
+            <div class="card horizontal">
+                <div class="card-image valign-wrapper">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="max-height:225px;">
+                </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h3>Module Showcase: locust</h3>
+                            <p class="flow-text">Locust is a python based load testing framework, it is incredibly useful to do load testing before an application launch to ensure stability for your users once many of them get into an application.</p>
+                        </div>
+                        <div class="card-action">
+                        <a href="#">Link to post</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+        
+
+        
+    </div>
+
+
+{% endblock content %}

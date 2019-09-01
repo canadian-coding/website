@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    
+    <!-- Manifest and Metadata-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home | Canadian Coding</title>
+    <meta name="description" content="Welcome to canadiancoding.ca a site with development tips for humans.">
+
+    <!-- PWA & manifest data FIXME: Not resolving properly-->
+    <link rel="manifest" href="{% static 'manifest/manifest.json' %}">
+    <meta name="theme-color" content="#141414">
+
+    <!-- TODO: Opengraph data -->
+    
+    <meta property="og:type" content="website">
+    <meta name="twitter:title" content="Canadian Coding">
+    <meta name="twitter:description" content="Welcome to kieranwood.ca if you are looking to inquire about website/webapp development you've come to the right place.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{% static 'img/canadian-coding-logo.png' %}">
+    <meta property="og:image" content="{% static 'img/canadian-coding-logo.png' %}"> 
+    
+    
+    
+    <link rel="icon" type="image/png" sizes="660x320" href="{% static 'img/canadian-coding-logo.png' %}">
+    
+    <!-- TODO: Stylesheets -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+    .sidenav li>a{
+        color:#f0f0f0;
+    }
+    ion-icon{
+        font-size:35px;
+        padding-left:10px;
+    }
+    h3{
+        text-decoration: underline;
+    }
+    
+    </style>
+</head>
+
+<body>
+    
+    <!-- Navigation Menu -->
+    
+    <nav>
+    <div class="nav-wrapper grey darken-4">
+      <a href="/" class="brand-logo green-text darken-3">Canadian Coding</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><ion-icon name="menu"></ion-icon></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="/posts">Posts</a></li>
+        <li><a href="//instagram.com/canadiancoding/">Instagram</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav black" id="mobile-demo">
+    <li><a href="/">Home</a></li>
+    <li><a href="/posts">Posts</a></li>
+    <li><a href="//instagram.com/canadiancoding/">Instagram</a></li>
+  </ul>
+    
+    <!-- Page Content -->
+        <div class="content" style="min-height:500px;">
+            <h2>Hello and welcome to canadian coding</h2>
+        </div>
+
+    
+    
+    <!-- Footer -->
+    <footer class="page-footer grey darken-4">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="green-text darken-3">Canadian Coding</h5>
+                <p class="grey-text text-lighten-4">Creating useful coding content for humans.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Social Media</h5>
+                <ul class="social-media-list">
+                  <span>
+                  <li><a class="grey-text text-lighten-3" href="//instagram.com/canadiancoding/"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                  <li><a class="grey-text text-lighten-3" href="//github.com/canadian-coding/"><ion-icon name="logo-github"></ion-icon></a></li>
+                  </span>
+                </ul>
+                
+
+
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="/posts">Posts</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Privacy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Canadian Coding
+            </div>
+          </div>
+        </footer>
+    
+    <!-- Javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+    // For procing the nav mobile menu
+    var elem = document.querySelector('.sidenav');
+    var instance = new M.Sidenav(elem);
+
+    </script>
+    
+</body>
+
+</html>

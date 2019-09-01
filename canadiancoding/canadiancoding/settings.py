@@ -15,12 +15,18 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h=fe2puya549v50l)f3j0)*2nu6$wo5^e4zz^$8ddyr4yii600'
+
+SECRET_KEY_PATH = os.path.join(os.path.dirname(__file__), "secretkey.txt")
+if os.path.exists(SECRET_KEY_PATH): # If secretkey file exists
+    with open(SECRET_KEY_PATH, 'r') as secretkeyfile:
+        SECRET_KEY = secretkeyfile.readlines()
+else: # If no secret key file exists
+    print("Using defined secretkey")
+    SECRET_KEY = 'h=fe2puya549v50l)f3j0)*2nu6$wo5^e4zz^$8ddyr4yii600'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,6 +37,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'posts', # Contains all dynamic and static pages related to posts
+    'pages', # Contains all static pages that are not post related
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -105,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Canada/Mountain'
 
 USE_I18N = True
 
@@ -118,3 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+   ]

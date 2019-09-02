@@ -6,19 +6,51 @@
 
 {% block content %}
 
+<style>
+
+#social-links{
+    width: 400px;
+    height: 40px;
+    position: relative;
+    border-radius: 100%;
+}
+a>ion-icon{
+    position: absolute;
+    font-size:30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline;
+}
+
+</style>
+
+<!--HighlightJS loading-->
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
 <div class="col s12 m12 l12">
         <div class="card">
-            <h1>{{post.title}}</h1>
-            <h5>{{post.subheading}}</h5>
             <div class="card-image waves-effect waves-block waves-light">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="display:block; margin-left:auto; margin-right:auto; max-height:500px; max-width:500px;">
             </div>
             <div class="card-content">
+            </br>
+                <div id="social-links">
+                    <a id="source-code" class="waves-effect waves-light btn btn-floating black" style="display: inline-block;" href="//github.com/canadian-coding"> <ion-icon name="logo-github"></ion-icon> </a>
+                    <a id="instagram" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="//instagram.com/canadiancoding"> <ion-icon name="logo-instagram"></ion-icon> </a>
+                </div>
                 <div id="markdown-content">
                     {{post.content|markdown|safe}}
                 </div>
                 </br>
-                <a href="{{post.github_source}}">Link to source</a>
+                <div id="social-links">
+                    <a id="source-code" class="waves-effect waves-light btn btn-floating black" style="display: inline-block;" href="{{post.github_source}}"> <ion-icon name="logo-github"></ion-icon> </a>
+                    <a id="instagram" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="//instagram.com/canadiancoding"> <ion-icon name="logo-instagram"></ion-icon> </a>
+                </div>
             </div>
             
             <div class="card-action">
@@ -30,4 +62,6 @@
 <a class="btn green darken-3" href="/posts" style="margin:7px;">Go back to all posts</a>
 
 {% endblock content %}
+
+
 

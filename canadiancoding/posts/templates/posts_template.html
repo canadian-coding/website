@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html>
-
+{% load static %}
 <head>
-    
     <!-- Manifest and Metadata-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>{% block title %}  {% endblock %} | Canadian Coding | Post</title>
     <meta name="description" content="Welcome to canadiancoding.ca a site with development tips for humans.">
 
-    <!-- TODO: PWA & manifest data-->
-    <!-- 
-    <link rel="manifest" href="/static/manifest.json">
-    <meta name="theme-color" content="#141414"> -->
+    <!-- PWA & manifest data FIXME: Not resolving properly-->
+    <link rel="manifest" href="{% static 'manifest/manifest.json' %}">
+    <meta name="theme-color" content="#141414">
 
     <!-- TODO: Opengraph data -->
-    <!-- 
+    
     <meta property="og:type" content="website">
     <meta name="twitter:title" content="Canadian Coding">
     <meta name="twitter:description" content="Welcome to kieranwood.ca if you are looking to inquire about website/webapp development you've come to the right place.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="/static/img/Resume%20Site.png">
-    <meta property="og:image" content="/static/img/Resume%20Site.png"> -->
-    
-    
-    <!-- TODO: Icons -->
-    <!--<link rel="icon" type="image/png" sizes="660x320" href="/static/img/Resume%20Site.png">-->
+    <meta name="twitter:image" content="{% static 'img/canadian-coding-logo.png' %}">
+    <meta property="og:image" content="{% static 'img/canadian-coding-logo.png' %}"> 
+
+    <!-- icons -->
+    <link rel="icon" type="image/png" sizes="660x320" href="{% static 'img/canadian-coding-logo.png' %}">
     
     <!-- TODO: Stylesheets -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
@@ -36,12 +33,33 @@
     }
     ion-icon{
         font-size:35px;
-        padding-left:10px;
+    } 
+
+    #social-links{
+    width: 400px;
+    height: 40px;
+    position: relative;
+    border-radius: 100%;
     }
-    h3{
-        text-decoration: underline;
+    a>ion-icon{
+        position: absolute;
+        font-size:30px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline;
     }
-    
+    #github{
+      background:#141414;
+    }
+    #instagram{ 
+      width:40px; height:40px;
+      background: #f09433; 
+      background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+      background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+      background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    }
     </style>
 </head>
 
@@ -85,12 +103,12 @@
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Social Media</h5>
-                <ul class="social-media-list">
-                  <span>
-                  <li><a class="grey-text text-lighten-3" href="//instagram.com/canadiancoding/"><ion-icon name="logo-instagram"></ion-icon></a></li>
-                  <li><a class="grey-text text-lighten-3" href="//github.com/canadian-coding/"><ion-icon name="logo-github"></ion-icon></a></li>
-                  </span>
-                </ul>
+                
+                  <div id="social-nav-links">
+                    <a id="github" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="//github.com/canadian-coding"> <ion-icon name="logo-github"></ion-icon> </a>
+                    <a id="instagram" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="//instagram.com/canadiancoding"> <ion-icon name="logo-instagram"></ion-icon> </a>
+                  </div>
+                
                 
 
 

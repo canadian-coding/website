@@ -31,7 +31,7 @@ else: # If no secret key file exists
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -167,3 +167,7 @@ JET_THEMES = [
         'title': 'Light Gray'
     }
 ]
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())

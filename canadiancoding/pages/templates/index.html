@@ -23,9 +23,10 @@
     <meta property="og:image" content="{% static 'img/canadian-coding-logo.png' %}"> 
     
     
-    
+    <!-- icons -->
     <link rel="icon" type="image/png" sizes="660x320" href="{% static 'img/canadian-coding-logo.png' %}">
-    
+
+
     <!-- TODO: Stylesheets -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -35,12 +36,33 @@
     }
     ion-icon{
         font-size:35px;
-        padding-left:10px;
+    } 
+
+    #social-links{
+    width: 400px;
+    height: 40px;
+    position: relative;
+    border-radius: 100%;
     }
-    h3{
-        text-decoration: underline;
+    a>ion-icon{
+        position: absolute;
+        font-size:30px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline;
     }
-    
+    #github{
+      background:#141414;
+    }
+    #instagram{ 
+      width:40px; height:40px;
+      background: #f09433; 
+      background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+      background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+      background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    }
     </style>
 </head>
 
@@ -68,7 +90,7 @@
     
     <!-- Page Content -->
         <div class="content" style="min-height:500px;">
-            <h2>Hello and welcome to canadian coding</h2>
+        <h1> Welcome to canadiancoding.ca</h1>
         </div>
 
     
@@ -83,12 +105,12 @@
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Social Media</h5>
-                <ul class="social-media-list">
-                  <span>
-                  <li><a class="grey-text text-lighten-3" href="//instagram.com/canadiancoding/"><ion-icon name="logo-instagram"></ion-icon></a></li>
-                  <li><a class="grey-text text-lighten-3" href="//github.com/canadian-coding/"><ion-icon name="logo-github"></ion-icon></a></li>
-                  </span>
-                </ul>
+                
+                  <div id="social-nav-links">
+                    <a id="github" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="//github.com/canadian-coding"> <ion-icon name="logo-github"></ion-icon> </a>
+                    <a id="instagram" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="//instagram.com/canadiancoding"> <ion-icon name="logo-instagram"></ion-icon> </a>
+                  </div>
+                
                 
 
 

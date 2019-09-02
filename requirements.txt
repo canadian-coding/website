@@ -1,6 +1,9 @@
 # Framework used
 Django
 
+# Production web server
+gunicorn
+
 # Manage virtual environment for easy dependency management
 virtualenvwrapper-win; platform_system == "Windows"
 virtualenvwrapper; platform_system != "Windows"
@@ -10,3 +13,4 @@ django-multiselectfield
 django-markdownx
 django-jet
 Markdown
+django-heroku

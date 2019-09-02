@@ -64,3 +64,7 @@ Add the necessary host domain name to ALLOWED_HOSTS in ```/canadiancoding/settin
 ## Running
 
 Change directory into the canadiancoding directory ```cd /canadaiancoding``` then run ```python manage.py runserver```.
+
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+

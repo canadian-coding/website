@@ -10,3 +10,5 @@ django-markdownx
 django-jet
 Markdown
 django-pwa
+whitenoise
+whitenoise[brotli]

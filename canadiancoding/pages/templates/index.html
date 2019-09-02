@@ -32,7 +32,37 @@
     }
     ion-icon{
         font-size:35px;
+        position:relative;
     } 
+    .card-image{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-height:400px;
+      max-width:400px;
+    }
+    .brand-logo{
+      max-width:800px;
+      
+
+    }
+    .nav-logo{
+      max-height:60px;
+      max-width:60px;
+      margin-bottom:-20px;
+      
+    }
+
+    .card-content{
+      height:50px;
+    }
+
+    .card{
+      height:575px;
+      margin: 35px;
+      max-width: 90%;
+      
+    }
 
     #social-links{
     width: 400px;
@@ -68,7 +98,9 @@
     
     <nav>
     <div class="nav-wrapper grey darken-4">
-      <a href="/" class="brand-logo green-text darken-3">Canadian Coding</a>
+
+      <a href="/" class="brand-logo green-text darken-3"><img class="nav-logo" src="{% static 'img/icons/canadian-coding-logo.png' %}"><p class="hide-on-med-and-down" style="display:inline;">Canadian Coding</p></a>
+
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><ion-icon name="menu"></ion-icon></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/">Home</a></li>
@@ -84,84 +116,90 @@
     <li><a href="//instagram.com/canadiancoding/">Instagram</a></li>
   </ul>
     
-    <!-- Page Content -->
-      <div class="content" style="min-height:700px;">
-        <div class="row">
-          <div class="col s12 flow-text center-align"><h1> Welcome to canadiancoding.ca</h1></div>
+  <!-- Page Content -->
+  <div class="content" style="min-height:700px;">
+    <div class="row">
+      <div class="col s12 flow-text center-align"><h1> Welcome to canadiancoding.ca</h1></div>
+      <div class="col s12 flow-text center-align"><h4> Here are some marketing buzzwords to make it sound like I care...</h4></div>
 
-          <div class="col s12 flow-text center-align"><h4> Here are some marketing buzzwords to make it sound like I care..</h4></div>
-
-
-
-
-          
-          <div class="col s4">1/3rd</div>
-
-
-          <div class="col s4">
-            <div class="card sticky-action">
-              <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="{% static 'img/icons/canadian-coding-logo.png' %}">
-                </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">Proudly Canadian</span>
-                </div>
-                <div class="card-action">
-                  <span class="card-title activator grey-text text-darken-4">Click to read more</span>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">Proudly Canadian<ion-icon name="close"><ion-icon></span>
-                  <p>Just out for a rip are ya bud?</p>
-                </div>
-              </div>        
-            </div>
+      <!-- Cards -->
+      <div class="col s12 m6 l4">
+        <div class="card grey lighten-5">
+          <div class="card-image">
+            <img class="activator" src="{% static 'img/icons/web-tag-icon.svg' %}">
           </div>
-
-
-          <div class="col s4">1/3rd</div>
-          <div class="col s12 m12 l12 center-align white-text green darken-3 z-depth-3"> 
-            <div class="col s12 m12 l12">
-              <p class="center-align flow-text">z-depth-5</p>
-            </div>
-          
-          <a href="/posts" class="center-align waves-effect waves-light btn-large white black-text ">View Posts</a></div>
-          </br>
-          
+          <div class="card-content center-align">
+            <span class="card-title"><h4>Multilanguage</h4></span>
+            <p style="font-size:15px;">Posts featured on this website encompass multiple languages including: python, go, javascript and many more.</p>
+          </div>
         </div>
-        
-        
       </div>
 
-    
-    
+      <div class="col s12 m6 l4">
+        <div class="card grey lighten-5">
+          <div class="card-image">
+            <img class="activator" src="{% static 'img/icons/canadian-coding-logo.png' %}">
+          </div>
+          <div class="card-content center-align">
+            <span class="card-title"><h4>Proudly Canadian</h4></span>
+            <p style="font-size:15px;">Just out for a rip are ya bud?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m6 l4">
+        <div class="card grey lighten-5">
+          <div class="card-image">
+            <img class="activator" src="{% static 'img/icons/logo-github.svg' %}">
+          </div>
+          <div class="card-content center-align">
+            <span class="card-title"><h4>Open Source</h4></span>
+            <p style="font-size:15px;">This whole website and every post are all entirely open source. Look for the github logo at the bottom of each post.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Banner -->
+
+      <div class="col s12 m12 l12 center-align white-text green darken-3 z-depth-3" style="height:200px; margin-bottom:-25px;"> 
+        <div class="col s12 m12 l12">
+          <p class="center-align flow-text">Check out our selection of posts!</p>
+        </div>
+        <a href="/posts" class="center-align waves-effect waves-light btn-large white black-text">View Posts</a></div>
+      </div>
+    </div> <!-- End of content div -->
+
     <!-- Footer -->
     <footer class="page-footer grey darken-4">
           <div class="container">
             <div class="row">
+              <!-- Left side -->
               <div class="col l6 s12">
                 <h5 class="green-text darken-3">Canadian Coding</h5>
                 <p class="grey-text text-lighten-4">Creating useful coding content for humans.</p>
               </div>
+
+              <!-- Right side -->
               <div class="col l4 offset-l2 s12">
+
+                <!-- Social Media -->
                 <h5 class="white-text">Social Media</h5>
-                
                   <div id="social-nav-links">
                     <a id="github" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="//github.com/canadian-coding"> <ion-icon name="logo-github"></ion-icon> </a>
                     <a id="instagram" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="//instagram.com/canadiancoding"> <ion-icon name="logo-instagram"></ion-icon> </a>
                   </div>
-                
-                
 
-
+                <!-- Generic footer links -->
                 <h5 class="white-text">Links</h5>
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="/posts">Posts</a></li>
                   <li><a class="grey-text text-lighten-3" href="#!">Privacy</a></li>
                 </ul>
-              </div>
-            </div>
-          </div>
+              </div> <!-- End of right side div -->
+            </div> <!-- End of row div -->
+          </div> <!-- End of container div-->
+
+          <!-- Copyright div -->
           <div class="footer-copyright">
             <div class="container">
             © 2019 Canadian Coding

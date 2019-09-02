@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'jet.dashboard',
     'jet', # Django admin theme override
     'pwa', # Sets app to be PWA compliant
+    'whitenoise.runserver_nostatic', # Serving static files
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,6 +54,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Static file serving
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -135,7 +137,9 @@ STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
    ]
 
-STATIC_ROOT = "/var/www/example.com/static/"
+STATIC_ROOT = "/var/www/example.com/static/" #TODO: Set properly for heroku
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Ability to change theme in admin view
 JET_THEMES = [

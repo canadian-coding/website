@@ -1,1 +1,0 @@
-web: gunicorn canadiancoding.wsgi --log-file -

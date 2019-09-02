@@ -17,17 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import render
 
-from django.conf import settings
 from django.conf.urls.static import static
 
-
-
-# TODO: add overall index route
-
 urlpatterns = [
-    path("jet/", include("jet.urls", "jet")),
+    path("", include('pages.urls')), # Where index.html is stored
+    path('', include('pwa.urls')), # Necessary to properly serve app as a PWA
+    path("jet/", include("jet.urls", "jet")), # Used by django-jet for admin UI elements
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
+    path('posts/', include('posts.urls')), # Forward to posts templates
+    path('markdownx/', include('markdownx.urls')), # Necessary for markdown editing fields in models
+    
     path('admin/', admin.site.urls),
-    path('posts/', include('posts.urls')),
-    path("", include('pages.urls')),
-    path('markdownx/', include('markdownx.urls')),
 ]

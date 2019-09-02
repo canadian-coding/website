@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 {% load static %}
+{% load pwa %}
 <head>
     
     <!-- Manifest and Metadata-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home | Canadian Coding</title>
+    <link rel='shortcut icon' href="{% static 'img/icons/favicon.ico' %}" type='image/x-icon'/>
     <meta name="description" content="Welcome to canadiancoding.ca a site with development tips for humans.">
-
-    <!-- PWA & manifest data FIXME: Not resolving properly-->
-    <link rel="manifest" href="{% static 'manifest/manifest.json' %}">
-    <meta name="theme-color" content="#141414">
 
     <!-- TODO: Opengraph data -->
     
@@ -21,11 +19,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="{% static 'img/canadian-coding-logo.png' %}">
     <meta property="og:image" content="{% static 'img/canadian-coding-logo.png' %}"> 
-    
-    
-    <!-- icons -->
-    <link rel="icon" type="image/png" sizes="660x320" href="{% static 'img/canadian-coding-logo.png' %}">
 
+    <!-- PWA manifest data -->
+    {% progressive_web_app_meta %}
 
     <!-- TODO: Stylesheets -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
@@ -89,9 +85,53 @@
   </ul>
     
     <!-- Page Content -->
-        <div class="content" style="min-height:500px;">
-        <h1> Welcome to canadiancoding.ca</h1>
+      <div class="content" style="min-height:700px;">
+        <div class="row">
+          <div class="col s12 flow-text center-align"><h1> Welcome to canadiancoding.ca</h1></div>
+
+          <div class="col s12 flow-text center-align"><h4> Here are some marketing buzzwords to make it sound like I care..</h4></div>
+
+
+
+
+          
+          <div class="col s4">1/3rd</div>
+
+
+          <div class="col s4">
+            <div class="card sticky-action">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="{% static 'img/icons/canadian-coding-logo.png' %}">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Proudly Canadian</span>
+                </div>
+                <div class="card-action">
+                  <span class="card-title activator grey-text text-darken-4">Click to read more</span>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Proudly Canadian<ion-icon name="close"><ion-icon></span>
+                  <p>Just out for a rip are ya bud?</p>
+                </div>
+              </div>        
+            </div>
+          </div>
+
+
+          <div class="col s4">1/3rd</div>
+          <div class="col s12 m12 l12 center-align white-text green darken-3 z-depth-3"> 
+            <div class="col s12 m12 l12">
+              <p class="center-align flow-text">z-depth-5</p>
+            </div>
+          
+          <a href="/posts" class="center-align waves-effect waves-light btn-large white black-text ">View Posts</a></div>
+          </br>
+          
         </div>
+        
+        
+      </div>
 
     
     

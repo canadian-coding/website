@@ -63,6 +63,20 @@ Add the necessary host domain name to ALLOWED_HOSTS in ```/canadiancoding/settin
 
 ## Running
 
+### First time
+
+You need to run a few commands to get started (Note that it's assumed you are inside the first /canadiancoding directory and not the root directory)
+
+1. Make necessary migrations: ```python manage.py makemigrations```
+2. Run the Migrations ```python manage.py migrate```
+3. Create a superuser ```python manage.py createsuperuser```
+4. Run the server ```python manage.py runserver```
+
+or you can do the oneline version:
+```python manage.py makemigrations && python manage.py migrate && python manage.py createsuperuser && python manage.py runserver```
+
+### Subsequent runs
+
 Change directory into the canadiancoding directory ```cd /canadaiancoding``` then run ```python manage.py runserver```.
 
 

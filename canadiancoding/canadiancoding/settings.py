@@ -39,9 +39,10 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'posts', # Contains all dynamic and static pages related to posts
     'pages', # Contains all static pages that are not post related
-    'multiselectfield', # Allows for multiple select fields
     'markdownx', # Allows for editing and creating markdown content
+    'jet.dashboard',
     'jet', # Django admin theme override
+    'pwa', # Sets app to be PWA compliant
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -134,6 +135,8 @@ STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
    ]
 
+STATIC_ROOT = "/var/www/example.com/static/"
+
 # Ability to change theme in admin view
 JET_THEMES = [
     {
@@ -165,9 +168,36 @@ JET_THEMES = [
         'theme': 'light-gray',
         'color': '#222',
         'title': 'Light Gray'
-    }
+    },
+    {
+        'theme': 'canadian-coding',
+        'color': '#141414',
+        'title': 'Canadian Coding'
+    },
+
 ]
 
-# Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
+# PWA configuration
+
+PWA_APP_NAME = 'Canadian Coding'
+PWA_APP_DESCRIPTION = "Welcome to canadiancoding.ca a site with development tips for humans."
+PWA_APP_THEME_COLOR = '#141414'
+PWA_APP_BACKGROUND_COLOR = '#f0f0f0'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/',
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/img/icons/canadian-coding-logo-icon-192x-192x.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': '/static/img/icons/canadian-coding-logo.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'

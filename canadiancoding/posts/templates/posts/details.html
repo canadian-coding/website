@@ -32,13 +32,14 @@ a>ion-icon{
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<div class="col s12 m12 l12">
+<div class="col s12 m11 l10">
         <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
+            <div class="card-image">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="display:block; margin-left:auto; margin-right:auto; max-height:500px; max-width:500px;">
             </div>
             <div class="card-content">
             </br>
+                <p>Check out canadian coding on social media</p>
                 <div id="social-links">
                     <a id="source-code" class="waves-effect waves-light btn btn-floating black" style="display: inline-block;" href="//github.com/canadian-coding"> <ion-icon name="logo-github"></ion-icon> </a>
                     <a id="instagram" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="//instagram.com/canadiancoding"> <ion-icon name="logo-instagram"></ion-icon> </a>
@@ -46,20 +47,24 @@ a>ion-icon{
                 <div id="markdown-content">
                     {{post.content|markdown|safe}}
                 </div>
-                </br>
+                    </br>
+                        <p>View source and corresponding instagram post</p>
+                    </br>
                 <div id="social-links">
-                    <a id="source-code" class="waves-effect waves-light btn btn-floating black" style="display: inline-block;" href="{{post.github_source}}"> <ion-icon name="logo-github"></ion-icon> </a>
-                    <a id="instagram" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="//instagram.com/canadiancoding"> <ion-icon name="logo-instagram"></ion-icon> </a>
+                    <a id="source-code" class="waves-effect waves-light btn btn-floating black pulse" style="display: inline-block;" href="{{post.github_source}}"> <ion-icon name="logo-github"></ion-icon> </a>
+                    <a id="instagram" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="{{post.instagram_link}}"> <ion-icon name="logo-instagram"></ion-icon> </a>
                 </div>
             </div>
             
             <div class="card-action">
-            Language(s): <p>{% for language in post.languages %}{{language}} {% endfor %}</p>
+            Language(s): <p>{{post.language|capfirst}}</p>
             Post created: {{post.created}} Last Updated {{post.last_modified}}
+            </br>
+            <a class="btn green darken-3" href="/posts" style="margin:7px;">Go back to all posts</a>
             </div>
         </div>
       </div>
-<a class="btn green darken-3" href="/posts" style="margin:7px;">Go back to all posts</a>
+
 
 {% endblock content %}
 

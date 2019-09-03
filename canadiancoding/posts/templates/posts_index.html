@@ -1,24 +1,49 @@
-{% extends 'posts_template.html' %}
+{% extends 'app-shell.html' %}
+{% load static %}
 
 {% block title %} Home {% endblock %}
 
 {% block content %}
 
+<style>
+.card{
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+}
+</style>
 
 <h1 class="center-align"> Posts </h1>
 
 <div class="row">
 {% for post in posts %}
+      <div class="col s12 m12 l4">
+            <div class="post-card">
 
-      <div class="col s12 m6 l4">
-            <div class="card large horizontal">
-                <div class="card-image valign-wrapper">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="max-height:225px;">
-                </div>
+            {% if post.language == "python"%}
+                <div class="card medium" style="background-image: url({% static 'img/card-layouts/python-card-layout.png' %});">
+                    
+            {% elif post.language == "go"%}
+                <div class="card medium" style="background-image: url({% static 'img/card-layouts/go-card-layout.png' %});">
+
+            {% elif post.language == "javascript"%}
+                <div class="card medium" style="background-image: url({% static 'img/card-layouts/javascript-card-layout.png' %});">
+
+            {% else %}
+                <div class="card medium" style="background-image: url({% static 'img/card-layouts/card-layout.png' %});">
+            
+            {% endif %}
+
+            
+                
                     <div class="card-stacked">
-                        <div class="card-content">
-                            <h3>{{post.title|truncatechars:75}}</h3>
-                            <p class="flow-text body-preview" style="padding:5px;">{{post.subheading|truncatechars:125}}</p>
+                        
+                        
+                        <div class="card-content center-align">
+                        
+                            <h4 style="margin-left:45px;margin-top:45px;">{{post.title|truncatechars:75}}</h4>
+                            <p class="flow-text body-preview" style="margin-top:-5px;">{{post.subheading|truncatechars:125}}</p>
                         </div>
                         
                     
@@ -29,6 +54,7 @@
                     </div>
             </div>
         </div>
+    </div>
 
 {% endfor %}
 </div>

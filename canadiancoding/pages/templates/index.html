@@ -1,132 +1,64 @@
-<!DOCTYPE html>
-<html>
+{% extends 'app-shell.html' %}
 {% load static %}
 {% load pwa %}
-<head>
+
+
+{% block title %}Home{% endblock title%}
+
+<style>
     
-    <!-- Manifest and Metadata-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home | Canadian Coding</title>
-    <link rel='shortcut icon' href="{% static 'img/icons/favicon.ico' %}" type='image/x-icon'/>
-    <meta name="description" content="Welcome to canadiancoding.ca a site with development tips for humans.">
 
-    <!-- TODO: Opengraph data -->
-    
-    <meta property="og:type" content="website">
-    <meta name="twitter:title" content="Canadian Coding">
-    <meta name="twitter:description" content="Welcome to kieranwood.ca if you are looking to inquire about website/webapp development you've come to the right place.">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="{% static 'img/canadian-coding-logo.png' %}">
-    <meta property="og:image" content="{% static 'img/canadian-coding-logo.png' %}"> 
-
-    <!-- PWA manifest data -->
-    {% progressive_web_app_meta %}
-
-    <!-- TODO: Stylesheets -->
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <style>
-    .sidenav li>a{
-        color:#f0f0f0;
-    }
-    ion-icon{
-        font-size:35px;
-        position:relative;
-    } 
-    .card-image{
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      max-height:400px;
-      max-width:400px;
-    }
-    .brand-logo{
-      max-width:800px;
-      
-
-    }
-    .nav-logo{
-      max-height:60px;
-      max-width:60px;
-      margin-bottom:-20px;
-      
-    }
 
     .card-content{
-      height:50px;
+      height:75px;
     }
 
     .card{
-      height:575px;
+      height:550px;
       margin: 35px;
       max-width: 90%;
       
     }
 
-    #social-links{
-    width: 400px;
-    height: 40px;
-    position: relative;
-    border-radius: 100%;
+    .card-image img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-height:300px;
+      max-width:300px;
     }
-    a>ion-icon{
-        position: absolute;
-        font-size:30px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: inline;
-    }
-    #github{
-      background:#141414;
-    }
-    #instagram{ 
-      width:40px; height:40px;
-      background: #f09433; 
-      background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-      background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-      background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-    }
-    </style>
-</head>
 
-<body>
+        
+
+</style>
+<!-- Page Content -->
+{% block content %}
     
-    <!-- Navigation Menu -->
-    
-    <nav>
-    <div class="nav-wrapper grey darken-4">
+  
+  <div class="content">
 
-      <a href="/" class="brand-logo green-text darken-3"><img class="nav-logo" src="{% static 'img/icons/canadian-coding-logo.png' %}"><p class="hide-on-med-and-down" style="display:inline;">Canadian Coding</p></a>
+  <div class="tablet-mobile-hero hide-on-large-only grey darken-4 center-align z-depth-5" style="margin-top:-45px;">
 
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><ion-icon name="menu"></ion-icon></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/">Home</a></li>
-        <li><a href="/posts">Posts</a></li>
-        <li><a href="//instagram.com/canadiancoding/">Instagram</a></li>
-      </ul>
-    </div>
-  </nav>
+    <h1 class="green-text darken-3 " style="font-size:75px; padding-bottom:25px;">Welcome to Canadian Coding</h1>
+  </div>
 
-  <ul class="sidenav black" id="mobile-demo">
-    <li><a href="/">Home</a></li>
-    <li><a href="/posts">Posts</a></li>
-    <li><a href="//instagram.com/canadiancoding/">Instagram</a></li>
-  </ul>
-    
-  <!-- Page Content -->
-  <div class="content" style="min-height:700px;">
+  <div class="parallax-container hide-on-med-and-down " style="height:900px;background-color: rgba(0, 0, 0, 0.3);">
+          <div class="parallax z-depth-3"><img src="{% static 'img/mount-robson.jpg' %}" style="height:1200px; width:100%;opacity: 0.7;"></div>
+          <div class="green-text darken-3 z-depth-2" style="text-align:center; margin-top:350px; height:150px;"><h1 style="font-size:100px;">Welcome to Canadian Coding</h1></div>
+        </div>
+        <p class="hide-on-med-and-down" style="margin-left:15px">Mount Robson Canada: image by <a href="https://unsplash.com/photos/HFbnIMpYbcc">Nick Saxby </a></p>
     <div class="row">
-      <div class="col s12 flow-text center-align"><h1> Welcome to canadiancoding.ca</h1></div>
-      <div class="col s12 flow-text center-align"><h4> Here are some marketing buzzwords to make it sound like I care...</h4></div>
+      <div class="col s12 flow-text center-align">
+        
+      
+      
+      
 
       <!-- Cards -->
       <div class="col s12 m6 l4">
-        <div class="card grey lighten-5">
+        <div class="card grey lighten-5" style="height:650px; margin:20px; max-width:90%;">
           <div class="card-image">
-            <img class="activator" src="{% static 'img/icons/web-tag-icon.svg' %}">
+            <img src="{% static 'img/icons/web-tag-icon.svg' %}"  style="max-width:500px;display: block;margin-left: auto;margin-right: auto;max-height:500px;">
           </div>
           <div class="card-content center-align">
             <span class="card-title"><h4>Multilanguage</h4></span>
@@ -136,21 +68,21 @@
       </div>
 
       <div class="col s12 m6 l4">
-        <div class="card grey lighten-5">
+        <div class="card grey lighten-5" style="height:650px; margin:20px; max-width:90%;">
           <div class="card-image">
-            <img class="activator" src="{% static 'img/icons/canadian-coding-logo.png' %}">
+            <img src="{% static 'img/icons/canadian-coding-logo.png' %}"  style="max-width:500px;display: block;margin-left: auto;margin-right: auto;max-height:500px;">
           </div>
           <div class="card-content center-align">
             <span class="card-title"><h4>Proudly Canadian</h4></span>
-            <p style="font-size:15px;">Just out for a rip are ya bud?</p>
+            <p style="font-size:15px;">Just out for a code are ya bud?</p>
           </div>
         </div>
       </div>
 
       <div class="col s12 m6 l4">
-        <div class="card grey lighten-5">
+        <div class="card grey lighten-5" style="height:650px; margin:20px; max-width:90%;">
           <div class="card-image">
-            <img class="activator" src="{% static 'img/icons/logo-github.svg' %}">
+            <img src="{% static 'img/icons/logo-github.svg' %}" style="max-width:500px;display: block;margin-left: auto;margin-right: auto;max-height:500px;">
           </div>
           <div class="card-content center-align">
             <span class="card-title"><h4>Open Source</h4></span>
@@ -158,10 +90,11 @@
           </div>
         </div>
       </div>
+    </div>
   
       <!-- Banner -->
 
-      <div class="col s12 m12 l12 center-align white-text green darken-3 z-depth-3" style="height:200px; margin-bottom:-25px;"> 
+      <div class="col s12 m12 l12 center-align white-text green darken-3 z-depth-3" style="height:175px; margin-bottom:-25px; width:100%;"> 
         <div class="col s12 m12 l12">
           <p class="center-align flow-text">Check out our selection of posts!</p>
         </div>
@@ -169,53 +102,11 @@
       </div>
     </div> <!-- End of content div -->
 
-    <!-- Footer -->
-    <footer class="page-footer grey darken-4">
-          <div class="container">
-            <div class="row">
-              <!-- Left side -->
-              <div class="col l6 s12">
-                <h5 class="green-text darken-3">Canadian Coding</h5>
-                <p class="grey-text text-lighten-4">Creating useful coding content for humans.</p>
-              </div>
-
-              <!-- Right side -->
-              <div class="col l4 offset-l2 s12">
-
-                <!-- Social Media -->
-                <h5 class="white-text">Social Media</h5>
-                  <div id="social-nav-links">
-                    <a id="github" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="//github.com/canadian-coding"> <ion-icon name="logo-github"></ion-icon> </a>
-                    <a id="instagram" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="//instagram.com/canadiancoding"> <ion-icon name="logo-instagram"></ion-icon> </a>
-                  </div>
-
-                <!-- Generic footer links -->
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="/posts">Posts</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Privacy</a></li>
-                </ul>
-              </div> <!-- End of right side div -->
-            </div> <!-- End of row div -->
-          </div> <!-- End of container div-->
-
-          <!-- Copyright div -->
-          <div class="footer-copyright">
-            <div class="container">
-            © 2019 Canadian Coding
-            </div>
-          </div>
-        </footer>
-    
-    <!-- Javascript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-    // For procing the nav mobile menu
-    var elem = document.querySelector('.sidenav');
-    var instance = new M.Sidenav(elem);
-
-    </script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems);});
     
-</body>
+    </script>
 
-</html>
+{% endblock content %}

@@ -1,14 +1,15 @@
-{% extends 'posts_template.html' %}
+{% extends 'app-shell.html' %}
 
 {% load markdown_extras %}
+{% load static %}
 
-{% block title %} {{post.title}} {% endblock %}
+{% block title %} {{post.title}} | post{% endblock %}
 
 {% block content %}
 
 <style>
 
-#social-links{
+#social-media-links{
     width: 400px;
     height: 40px;
     position: relative;
@@ -34,9 +35,25 @@ a>ion-icon{
 
 <div class="col s12 m11 l10">
         <div class="card">
-            <div class="card-image">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" style="display:block; margin-left:auto; margin-right:auto; max-height:500px; max-width:500px;">
+            <div class="card-image center-align"  style="width:100%;">
+                {% if post.language == "python"%}
+                <img src="{% static 'img/post-banners/python-post-banner.png' %}" style="width:100%;">
+                    
+                {% elif post.language == "go"%}
+                    <img src="{% static 'img/post-banners/go-post-banner.png' %}" style="width:100%;">
+
+                {% elif post.language == "javascript"%}
+                    <img src="{% static 'img/post-banners/javascript-post-banner.png' %}" style="width:100%;">
+
+                {% else %}
+                    <img src="{% static 'img/post-banners/post-banner.png' %}" style="width:100%;">
+                
+                {% endif %}
+
+
             </div>
+
+            
             <div class="card-content">
             </br>
                 <p>Check out canadian coding on social media</p>
@@ -50,7 +67,7 @@ a>ion-icon{
                     </br>
                         <p>View source and corresponding instagram post</p>
                     </br>
-                <div id="social-links">
+                <div id="social-media-links">
                     <a id="source-code" class="waves-effect waves-light btn btn-floating black pulse" style="display: inline-block;" href="{{post.github_source}}"> <ion-icon name="logo-github"></ion-icon> </a>
                     <a id="instagram" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="{{post.instagram_link}}"> <ion-icon name="logo-instagram"></ion-icon> </a>
                 </div>

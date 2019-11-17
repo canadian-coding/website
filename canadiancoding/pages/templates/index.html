@@ -5,108 +5,187 @@
 
 {% block title %}Home{% endblock title%}
 
-<style>
-    
 
-
-    .card-content{
-      height:75px;
-    }
-
-    .card{
-      height:550px;
-      margin: 35px;
-      max-width: 90%;
-      
-    }
-
-    .card-image img{
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      max-height:300px;
-      max-width:300px;
-    }
-
-        
-
-</style>
-<!-- Page Content -->
 {% block content %}
-    
-  
-  <div class="content">
+      <!-- sliders -->
+      <div id="sliders">
+        <div class="full-width">
+          <!-- light slider -->
+          <div id="light-slider" class="carousel slide">
+            <div id="carousel-area">
+              <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                  
+                    <img src="{% static 'img/hero.jpg' %}" alt="">
+                    <div class="carousel-caption">
+                      <h3 class="slide-title animated fadeInDown"><span>Canadian Coding</span></h3>
+                      <h5 class="slide-text animated fadeIn">Lorem ipsum dolor sit amet, consectetuer adipiscing elit<br> Curabitur ultricies nisi Nam eget dui. Etiam rhoncus</h5>
+                      <a href="#" class="btn btn-lg btn-common animated fadeInUp">Get Started</a>
+                      <a href="#" class="btn btn-lg btn-border animated fadeInUp">Learn More</a>
+                    </div>
+                  </div>
 
-  <div class="tablet-mobile-hero hide-on-large-only grey darken-4 center-align z-depth-5" style="margin-top:-45px;">
-
-    <h1 class="green-text darken-3 " style="font-size:75px; padding-bottom:25px;">Welcome to Canadian Coding</h1>
-  </div>
-
-  <div class="parallax-container hide-on-med-and-down " style="height:900px;background-color: rgba(0, 0, 0, 0.3);">
-          <div class="parallax z-depth-3"><img src="{% static 'img/mount-robson.jpg' %}" style="height:1200px; width:100%;opacity: 0.7;"></div>
-          <div class="green-text darken-3 z-depth-2" style="text-align:center; margin-top:350px; height:150px;"><h1 style="font-size:100px;">Welcome to Canadian Coding</h1></div>
-        </div>
-        <p class="hide-on-med-and-down" style="margin-left:15px">Mount Robson Canada: image by <a href="https://unsplash.com/photos/HFbnIMpYbcc">Nick Saxby </a></p>
-    <div class="row">
-      <div class="col s12 flow-text center-align">
-        
-      
-      
-      
-
-      <!-- Cards -->
-      <div class="col s12 m6 l4">
-        <div class="card grey lighten-5" style="height:650px; margin:20px; max-width:90%;">
-          <div class="card-image">
-            <img src="{% static 'img/icons/web-tag-icon.svg' %}"  style="max-width:500px;display: block;margin-left: auto;margin-right: auto;max-height:500px;">
-          </div>
-          <div class="card-content center-align">
-            <span class="card-title"><h4>Multilanguage</h4></span>
-            <p style="font-size:15px;">Posts featured on this website encompass multiple languages including: python, go, javascript and many more.</p>
+                </div>
+                <a class="carousel-control-prev" href="#carousel-slider" role="button" data-slide="prev">
+                  <i class="fa fa-chevron-left"></i>
+                </a>
+                <a class="carousel-control-next" href="#carousel-slider" role="button" data-slide="next">
+                  <i class="fa fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <!-- End sliders -->
 
-      <div class="col s12 m6 l4">
-        <div class="card grey lighten-5" style="height:650px; margin:20px; max-width:90%;">
-          <div class="card-image">
-            <img src="{% static 'img/icons/canadian-coding-logo.png' %}"  style="max-width:500px;display: block;margin-left: auto;margin-right: auto;max-height:500px;">
-          </div>
-          <div class="card-content center-align">
-            <span class="card-title"><h4>Proudly Canadian</h4></span>
-            <p style="font-size:15px;">Just out for a code are ya bud?</p>
-          </div>
-        </div>
-      </div>
+    </header>
+    <!-- Header Area wrapper End -->
 
-      <div class="col s12 m6 l4">
-        <div class="card grey lighten-5" style="height:650px; margin:20px; max-width:90%;">
-          <div class="card-image">
-            <img src="{% static 'img/icons/logo-github.svg' %}" style="max-width:500px;display: block;margin-left: auto;margin-right: auto;max-height:500px;">
+    <!-- About Section Start -->
+    <div id="about" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="about block text-center">
+              <img src="{% static 'img/about/img1.png' %}" alt="">
+              <h5><a href="#">About Title</a></h5>
+              <p>Quisque sit amet libero purus. Nulla a dignissim quam. In hac habitasse platea dictumst.</p>
+            </div>
           </div>
-          <div class="card-content center-align">
-            <span class="card-title"><h4>Open Source</h4></span>
-            <p style="font-size:15px;">This whole website and every post are all entirely open source. Look for the github logo at the bottom of each post.</p>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="about block text-center">
+              <img src="{% static 'img/about/img2.png' %}" alt="">
+              <h5><a href="#">About Title</a></h5>
+              <p>Quisque sit amet libero purus. Nulla a dignissim quam. In hac habitasse platea dictumst.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="about block text-center">
+              <img src="{% static 'img/about/img3.png' %}" alt="">
+              <h5><a href="#">About Title</a></h5>
+              <p>Quisque sit amet libero purus. Nulla a dignissim quam. In hac habitasse platea dictumst.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="about block text-center">
+              <img src="{% static 'img/about/img4.png' %}" alt="">
+              <h5><a href="#">About Title</a></h5>
+              <p>Quisque sit amet libero purus. Nulla a dignissim quam. In hac habitasse platea dictumst.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  
-      <!-- Banner -->
+    <!-- About Section End -->
 
-      <div class="col s12 m12 l12 center-align white-text green darken-3 z-depth-3" style="height:175px; margin-bottom:-25px; width:100%;"> 
-        <div class="col s12 m12 l12">
-          <p class="center-align flow-text">Check out our selection of posts!</p>
+    <!-- Services Section Start -->
+    <section id="services" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="section-title wow fadeInDown animated" data-wow-delay="0.3s">Our Services</h2>
+          </div>
         </div>
-        <a href="/posts" class="center-align waves-effect waves-light btn-large white black-text">View Posts</a></div>
+        <div class="row">
+          <!-- Start Service Icon 1 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-cogs"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Easy to Customize</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 1 -->
+
+          <!-- Start Service Icon 2 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-cubes"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">100+ Components</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 2 -->
+
+          <!-- Start Service Icon 3 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-tachometer"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Super Fast</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 3 -->
+
+          <!-- Start Service Icon 4 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-check"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Clean Design</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 4 -->
+
+          <!-- Start Service Icon 5 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-flash"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Bootstrap 4 UI Kit</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 5 -->
+          
+          <!-- Start Service Icon 6 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-hand-pointer-o"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Advanced Features</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 6 -->
+        </div>
       </div>
-    </div> <!-- End of content div -->
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.parallax');
-    var instances = M.Parallax.init(elems);});
-    
-    </script>
-
+    </section>
+    <!-- Services Section End -->
 {% endblock content %}

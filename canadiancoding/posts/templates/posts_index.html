@@ -4,60 +4,328 @@
 {% block title %} Home {% endblock %}
 
 {% block content %}
+      <!-- sliders -->
+      <div id="sliders">
+        <div class="full-width">
+          <!-- light slider -->
+          <div id="light-slider" class="carousel slide">
+            <div id="carousel-area">
+              <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                  
+                    <img src="{% static 'img/hero.jpg' %}" alt="">
+                    <div class="carousel-caption">
+                      <h3 class="slide-title animated fadeInDown"><span>Canadian Coding</span></h3>
+                      <h5 class="slide-text animated fadeIn">Lorem ipsum dolor sit amet, consectetuer adipiscing elit<br> Curabitur ultricies nisi Nam eget dui. Etiam rhoncus</h5>
+                      <a href="#" class="btn btn-lg btn-common animated fadeInUp">Get Started</a>
+                      <a href="#" class="btn btn-lg btn-border animated fadeInUp">Learn More</a>
+                    </div>
+                  </div>
 
-<style>
-.card{
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    height:100%;
-}
-</style>
+                </div>
+                <a class="carousel-control-prev" href="#carousel-slider" role="button" data-slide="prev">
+                  <i class="fa fa-chevron-left"></i>
+                </a>
+                <a class="carousel-control-next" href="#carousel-slider" role="button" data-slide="next">
+                  <i class="fa fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End sliders -->
 
-<h1 class="center-align"> Posts </h1>
+    </header>
+    <!-- Header Area wrapper End -->
 
-<div class="row">
-{% for post in posts %}
-      <div class="col s12 m12 l4">
-            <div class="post-card">
+    <!-- About Section Start -->
+    <div id="about" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="about block text-center">
+              <img src="{% static 'img/about/img1.png' %}" alt="">
+              <h5><a href="#">About Title</a></h5>
+              <p>Quisque sit amet libero purus. Nulla a dignissim quam. In hac habitasse platea dictumst.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="about block text-center">
+              <img src="{% static 'img/about/img2.png' %}" alt="">
+              <h5><a href="#">About Title</a></h5>
+              <p>Quisque sit amet libero purus. Nulla a dignissim quam. In hac habitasse platea dictumst.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="about block text-center">
+              <img src="{% static 'img/about/img3.png' %}" alt="">
+              <h5><a href="#">About Title</a></h5>
+              <p>Quisque sit amet libero purus. Nulla a dignissim quam. In hac habitasse platea dictumst.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="about block text-center">
+              <img src="{% static 'img/about/img4.png' %}" alt="">
+              <h5><a href="#">About Title</a></h5>
+              <p>Quisque sit amet libero purus. Nulla a dignissim quam. In hac habitasse platea dictumst.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About Section End -->
 
+    <!-- Services Section Start -->
+    <section id="services" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="section-title wow fadeInDown animated" data-wow-delay="0.3s">Our Services</h2>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Start Service Icon 1 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-cogs"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Easy to Customize</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 1 -->
+
+          <!-- Start Service Icon 2 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-cubes"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">100+ Components</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 2 -->
+
+          <!-- Start Service Icon 3 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-tachometer"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Super Fast</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 3 -->
+
+          <!-- Start Service Icon 4 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-check"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Clean Design</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 4 -->
+
+          <!-- Start Service Icon 5 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-flash"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Bootstrap 4 UI Kit</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 5 -->
+          
+          <!-- Start Service Icon 6 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-hand-pointer-o"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Advanced Features</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 6 -->
+        </div>
+      </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- facts Section Start -->
+    <div id="counter">
+      <div class="container">
+        <div class="row count-to-sec">
+
+          <div class="col-lg-3 col-md-6 col-xs-12 count-one">
+            <span class="icon"><i class="fa fa-coffee"> </i></span>
+            <h3 class="timer count-value" data-to="4" data-speed="1000">4</h3>
+            <hr class="width25-divider">
+            <small class="count-title">Months of Posting</small>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-xs-12 count-one">
+            <span class="icon"><i class="fa fa-code"> </i></span>
+            <h3 class="timer count-value" data-to="6" data-speed="1000">6</h3>
+            <hr class="width25-divider">
+            <small class="count-title">Languages</small>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-xs-12 count-one">
+            <span class="icon"><i class="fa fa-file"> </i></span>
+            <h3 class="timer count-value" data-to="30" data-speed="1000">30</h3>
+            <hr class="width25-divider">
+            <small class="count-title">Posts Created</small>
+          </div>
+      
+          <div class="col-lg-3 col-md-6 col-xs-12 count-one">
+            <span class="icon"><i class="fa fa-desktop"> </i></span>
+            <h3 class="timer count-value" data-to="4546" data-speed="1000">4,546</h3>
+            <hr class="width25-divider">
+            <small class="count-title">Lines of code written</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- facts Section End -->
+  
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding">
+      <!-- Container Starts -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="section-title wow fadeInDown animated" data-wow-delay="0.3s">Recent Posts</h2>
+          </div>
+        </div>
+
+        
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <!-- Portfolio Controller/Buttons -->
+            <div class="controls text-center wow fadeInUpQuick" data-wow-delay=".6s">
+              <a class="filter active btn btn-common" data-filter="all">
+                All 
+              </a>
+              <a class="filter btn btn-common" data-filter=".python">
+                Python 
+              </a>
+              <a class="filter btn btn-common" data-filter=".go">
+                Go
+              </a>
+              <a class="filter btn btn-common" data-filter=".rust">
+                Rust 
+              </a>
+              <a class="filter btn btn-common" data-filter=".processing">
+                Processing 
+              </a>
+            </div>
+            <!-- Portfolio Controller/Buttons Ends-->
+          </div>
+
+          
+          <!-- Portfolio Recent Projects -->
+          <div id="portfolio" class="row wow fadeInUpQuick" data-wow-delay="0.8s">
+            {% for post in posts %}
+            <!--TODO: parameterize filtering-->
             {% if post.language == "python"%}
-                <div class="card medium" style="background-image: url({% static 'img/card-layouts/python-card-layout.png' %});">
+                <div class="col-lg-4 col-md-6 col-xs-12 mix python">
                     
             {% elif post.language == "go"%}
-                <div class="card medium" style="background-image: url({% static 'img/card-layouts/go-card-layout.png' %});">
+                <div class="col-lg-4 col-md-6 col-xs-12 mix go">
 
             {% elif post.language == "javascript"%}
-                <div class="card medium" style="background-image: url({% static 'img/card-layouts/javascript-card-layout.png' %});">
+                <div class="col-lg-4 col-md-6 col-xs-12 mix javascript">
 
             {% else %}
-                <div class="card medium" style="background-image: url({% static 'img/card-layouts/card-layout.png' %});">
+                <div class="col-lg-4 col-md-6 col-xs-12 mix">
             
             {% endif %}
-
             
+
+
+              <div class="portfolio-item">
+                <!--TODO: Parameterize card-->
+                <div class="portfolio-img">
+                <!--TODO: Determine if this is useful-->
+                  <div class="post-type centered" style="font-size: 15px;">{{post.category|title}}</div>
+                  <div class="post-heading centered" style="font-size:25px;">{{post.title|truncatechars:75}}</div>
+                  <div class="post-sub-heading centered" style=" margin-top:25px;">{{post.subheading|truncatechars:125}}</div>
+                  {% if post.language == "python"%}
+                    <img src="{% static 'img/posts/python-card-layout.png' %}" alt="python-post-image" />
+                        
+                  {% elif post.language == "go"%}
+                    <img src="{% static 'img/posts/go-card-layout.png' %}" alt="go-post-image" />
+
+                  {% elif post.language == "javascript"%}
+                    <img src="{% static 'img/posts/javascript-card-layout.png' %}" alt="javascript-post-image" />
+
+                  {% else %}
+                    <img src="{% static 'img/posts/card-layout.png' %}" alt="post-image" />
                 
-                    <div class="card-stacked">
-                        
-                        
-                        <div class="card-content center-align">
-                        
-                            <h4 style="margin-left:45px;margin-top:45px;">{{post.title|truncatechars:75}}</h4>
-                            <p class="flow-text body-preview" style="margin-top:-5px;">{{post.subheading|truncatechars:125}}</p>
-                        </div>
-                        
-                    
-                        <div class="card-action">
-                                <p>Language: {{post.language|capfirst}}</p>
-                                <a class="waves-effect waves-light green darken-3 btn" href="/posts/details/{{post.id}}" >Go To Post</a>
-                        </div>
+                  {% endif %}
+                  
+                </div>
+                <div class="portfoli-content">
+                  <div class="sup-desc-wrap">
+                    <div class="sup-desc-inner">
+                      <div class="sup-link">
+                        <a class="left-link" href="/posts/details/{{post.id}}"><i class="fa fa-link"></i></a>
+                        <a class="right-link" href="{{post.github_source}}"><i class="fa fa-github"></i></a>
+                      </div>
+                      <div class="sup-meta-wrap">
+                        <a class="sup-title" href="/posts/details/{{post.id}}">
+                          <h4 style="font-size">{{post.title|truncatechars:75}}</h4>
+                        </a>
+                        <p class="sup-description">{{post.subheading|truncatechars:125}}</p>
+                      </div>
                     </div>
+                  </div>
+                </div>
+              </div>
             </div>
+        {% endfor %}
+
+            </div>
+          </div>
         </div>
-    </div>
-
-{% endfor %}
-</div>
-
-
+      </div>
+      <!-- Container Ends -->
+    </section>
+    <!-- Portfolio Section Ends -->
 {% endblock content %}

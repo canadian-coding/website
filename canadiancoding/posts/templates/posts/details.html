@@ -9,21 +9,24 @@
 
 <style>
 
-#social-media-links{
-    width: 400px;
-    height: 40px;
-    position: relative;
-    border-radius: 100%;
+.navbar-nav .nav-link {
+  color: #141414;
+  font-size: 14px;
+  margin-right: 18px;
+  font-weight: 400;
+  padding: 18px 0px;
 }
-a>ion-icon{
-    position: absolute;
-    font-size:30px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: inline;
-}
-
+#github{
+      background:#141414;
+    }
+#instagram{ 
+      width:40px; height:40px;
+      background: #f09433; 
+      background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+      background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+      background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    }
 </style>
 
 <!--HighlightJS loading-->
@@ -32,57 +35,69 @@ a>ion-icon{
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+<div class="spacer" style="height:50px;"></div>
 
-<div class="col s12 m11 l10">
-        <div class="card">
-            <div class="card-image center-align"  style="width:100%;">
-                {% if post.language == "python"%}
-                <img src="{% static 'img/post-banners/python-post-banner.png' %}" style="width:100%;">
-                    
-                {% elif post.language == "go"%}
-                    <img src="{% static 'img/post-banners/go-post-banner.png' %}" style="width:100%;">
+      <!-- sliders -->
+      <div id="sliders">
+        <div class="full-width">
+          <!-- light slider -->
+          <div id="light-slider" class="carousel slide">
+            <div id="carousel-area">
+              <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                  
+                        {% if post.language == "python"%}
+                            <img src="{% static 'img/post-banners/python-post-banner.png' %}" >
+                            
+                        {% elif post.language == "go"%}
+                            <img src="{% static 'img/post-banners/go-post-banner.png' %}" >
 
-                {% elif post.language == "javascript"%}
-                    <img src="{% static 'img/post-banners/javascript-post-banner.png' %}" style="width:100%;">
+                        {% elif post.language == "javascript"%}
+                            <img src="{% static 'img/post-banners/javascript-post-banner.png' %}" >
 
-                {% else %}
-                    <img src="{% static 'img/post-banners/post-banner.png' %}" style="width:100%;">
-                
-                {% endif %}
+                        {% else %}
+                            <img src="{% static 'img/post-banners/post-banner.png' %}" >
+                        
+                        {% endif %}
+                    <div class="carousel-caption" style="margin-top:200px;">
+                      <h3 class="slide-title animated fadeInDown" style="color:black;"><span>Canadian Coding</span></h3>
+                      <h5 class="slide-text animated fadeIn" style="color:black;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit<br> Curabitur ultricies nisi Nam eget dui. Etiam rhoncus</h5>
+                      <a href="#" class="btn btn-lg btn-common animated fadeInUp">Get Started</a>
+                      <a href="#" class="btn btn-lg btn-border animated fadeInUp">Learn More</a>
+                    </div>
+                  </div>
 
-
-            </div>
-
-            
-            <div class="card-content">
-            </br>
-                <p>Check out canadian coding on social media</p>
-                <div id="social-links">
-                    <a id="source-code" class="waves-effect waves-light btn btn-floating black" style="display: inline-block;" href="//github.com/canadian-coding"> <ion-icon name="logo-github"></ion-icon> </a>
-                    <a id="instagram" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="//instagram.com/canadiancoding"> <ion-icon name="logo-instagram"></ion-icon> </a>
                 </div>
-                <div id="markdown-content">
-                    {{post.content|markdown|safe}}
-                </div>
-                    </br>
-                        <p>View source and corresponding instagram post</p>
-                    </br>
-                <div id="social-media-links">
-                    <a id="source-code" class="waves-effect waves-light btn btn-floating black pulse" style="display: inline-block;" href="{{post.github_source}}"> <ion-icon name="logo-github"></ion-icon> </a>
-                    <a id="instagram" class="waves-effect waves-light btn btn-floating" style="display: inline-block;" href="{{post.instagram_link}}"> <ion-icon name="logo-instagram"></ion-icon> </a>
-                </div>
+              </div>
             </div>
-            
-            <div class="card-action">
-            Language(s): <p>{{post.language|capfirst}}</p>
-            Post created: {{post.created}} Last Updated {{post.last_modified}}
-            </br>
-            <a class="btn green darken-3" href="/posts" style="margin:7px;">Go back to all posts</a>
-            </div>
+          </div>
         </div>
       </div>
+      <!-- End sliders -->
+
+<div id="markdown-content">
+    {{post.content|markdown|safe}}
+</div>
 
 
+                    <a href="{{post.github_source}}" style="display: inline-block; width:35px; height:35px;">
+                        <img src="{% static 'img/icons/github-logo.png'%}">
+                    </a>
+                    <a href="{{post.instagram_link}}" style="display: inline-block; width:35px; height:35px;" > 
+                        <img src="{% static 'img/icons/instagram-logo.png'%}">
+                    </a>
+
+
+                <div id="post-metadata">
+                    <p>Language: {{post.language|capfirst}}</p>
+                    <p>Post created: {{post.created}} Last Updated {{post.last_modified}}</p>
+                </div>
+
+                <button type="button" class="btn std-btn btn-sm btn-danger-filled" style="margin-left:5px;">
+                  <i class="fa fa-arrow-circle-o-left icons"></i>
+                  <a href="/posts" style="color:white;">Go back to all posts</a>
+                </button>
 {% endblock content %}
 
 

@@ -46,6 +46,10 @@
     <link rel="stylesheet" href="{% static 'css/extras.css' %}">
     <!-- Responsive Style -->
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Material stylesheet-->
+    <link rel="stylesheet" href="{% static 'css/material.min.css' %}">
+    <!-- Generic stylesheet-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
      
 
@@ -56,7 +60,7 @@
     <!-- Header Area wrapper Starts -->
     <header id="header-wrap">
       <!-- Navbar Start -->
-      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar ">
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -66,10 +70,12 @@
               <span class="icon-menu"></span>
               <span class="icon-menu"></span>
             </button>
-            <a href="/" class="navbar-brand"><img src="{% static 'img/navbar-logo.png' %}" alt=""></a>
+            <a href="/" class="navbar-brand"><img src="{% static 'img/navbar-logo.png' %}" alt="canadian-coding-logo"></a>
           </div>
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
+
+            {% block navlinks %} <!-- NOTE: Seperate block so active status can be set-->
               <li class="nav-item active">
                 <a class="nav-link" href="/">
                   Home
@@ -85,7 +91,9 @@
                   Services
                 </a>
               </li>
+            {% endblock navlinks %}
             </ul>
+
           </div>
         </div>
 
@@ -111,6 +119,8 @@
 
       </nav>
       <!-- Navbar End -->
+      
+<div class="spacer" style="height:50px;"></div>
 
 <!--Content Start-->
 {% block content %}
@@ -132,13 +142,13 @@
               About Us
             </h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis veritatis eius porro modi hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              A web development company that also creates informative articles. Proudly canadian, eh.
             </p>
             <div class="social-footer">
             <!--TODO: Fill out links-->
-              <a href="//instagram.com/canadiancoding"><i class="fa fa-instagram icon-round"></i></a>
-              <a href="//github.com/canadian-coding"><i class="fa fa-github icon-round"></i></a>
-              <a href="//www.youtube.com/channel/UC1-WbwQ1sAVZ3AVmrXcBwGw/videos"><i class="fa fa-youtube icon-round"></i></a>
+              <a href="//instagram.com/canadiancoding" target="_blank"><i class="fa fa-instagram icon-round"></i></a>
+              <a href="//github.com/canadian-coding" target="_blank"><i class="fa fa-github icon-round"></i></a>
+              <a href="//www.youtube.com/channel/UC1-WbwQ1sAVZ3AVmrXcBwGw/videos" target="_blank"><i class="fa fa-youtube icon-round"></i></a>
             </div>
           </div>
           <!-- Footer Widget Ends -->
@@ -153,7 +163,7 @@
               <!--TODO Services <li><a href="#">Services</a></li> -->
               <!--TODO Works <li><a href="#">Works</a></li> -->
               <li><a href="#">Pricing</a></li>
-              <li><a href="#">Blog/Posts</a></li>
+              <li><a href="/posts">Blog/Posts</a></li>
               <li><a href="#">Contact</a></li>
             </ul>
           </div>
@@ -177,7 +187,7 @@
             <div class="col-lg-6 col-md-6 col-xs-12">
               <ul class="nav nav-inline  justify-content-end ">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Home</a>
+                  <a class="nav-link active" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Sitemap</a>
@@ -223,6 +233,7 @@
     <script src="{% static 'js/form-validator.min.js' %}"></script>
     <script src="{% static 'js/contact-form-script.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/material.min.js' %}"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
       
   </body>

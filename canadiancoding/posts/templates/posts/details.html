@@ -27,6 +27,30 @@
       background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
     }
+
+  .page-title-section{
+    {% if post.language == "python"%}
+    position:relative;background:url({% static 'img/post-banners/python-post-banner.png' %}) 
+    
+    {% elif post.language == "go"%}
+    position:relative;background:url({% static 'img/post-banners/go-post-banner.png' %}) 
+
+    {% elif post.language == "javascript"%}
+    position:relative;background:url({% static 'img/post-banners/javascript-post-banner.png' %}) 
+
+    {% elif post.language == "processing"%}
+    position:relative;background:url({% static 'img/post-banners/processing-post-banner.png' %}) 
+
+    {% elif post.language == "c"%}
+    position:relative;background:url({% static 'img/post-banners/c-post-banner.png' %}) 
+
+    {% else %}
+    position:relative;background:url({% static 'img/post-banners/post-banner.png' %}) 
+    
+    {% endif %}
+    
+    no-repeat scroll center center;
+    background-size:cover}
 </style>
 
 <!--HighlightJS loading-->
@@ -35,69 +59,101 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<div class="spacer" style="height:50px;"></div>
-
-      <!-- sliders -->
-      <div id="sliders">
-        <div class="full-width">
-          <!-- light slider -->
-          <div id="light-slider" class="carousel slide">
-            <div id="carousel-area">
-              <div id="carousel-slider" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner" role="listbox">
-                  <div class="carousel-item active">
-                  
-                        {% if post.language == "python"%}
-                            <img src="{% static 'img/post-banners/python-post-banner.png' %}" >
-                            
-                        {% elif post.language == "go"%}
-                            <img src="{% static 'img/post-banners/go-post-banner.png' %}" >
-
-                        {% elif post.language == "javascript"%}
-                            <img src="{% static 'img/post-banners/javascript-post-banner.png' %}" >
-
-                        {% else %}
-                            <img src="{% static 'img/post-banners/post-banner.png' %}" >
-                        
-                        {% endif %}
-                    <div class="carousel-caption" style="margin-top:200px;">
-                      <h3 class="slide-title animated fadeInDown" style="color:black;"><span>Canadian Coding</span></h3>
-                      <h5 class="slide-text animated fadeIn" style="color:black;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit<br> Curabitur ultricies nisi Nam eget dui. Etiam rhoncus</h5>
-                      <a href="#" class="btn btn-lg btn-common animated fadeInUp">Get Started</a>
-                      <a href="#" class="btn btn-lg btn-border animated fadeInUp">Learn More</a>
+        <!-- Page Titile Area -->
+        <section class="page-title-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-center">
+                            <div class="title-middle">
+                                <h2 class="page-tagline">{{ post.language }}</h2>
+                                <h1 class="page-title" style="width: 350px;word-wrap: break-word;">{{ post.title }}</h1>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <!-- End sliders -->
+        </section>
+        <!-- Page Titile Area End -->
 
-<div id="markdown-content">
-    {{post.content|markdown|safe}}
-</div>
+        <!-- Material Blog Post section -->
+        <section class="Material-blog-post-page section-padding">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Blog Post -->
+                    <div class="single-blog-page col-md-12 col-lg-8 col-xs-12">
+                        <article class="single-post wow fadeInUp animated"  data-wow-delay=".2s">
+
+                            <h2>{{ post.subheading }}</h2>
+                            <h6 style="margin-top:-25px; font-size: 15px">{{post.category}}</h6>
+                            <div id="markdown-content">
+                              {{post.content|markdown|safe}}
+                            </div>
+                            
+                        </article>
+                        <div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Sidebar -->
+                    <div class="col-md-12 col-lg-4 col-xs-12 blog-sidebar-column">
+                        <!-- Single Sidebar -->
+                        <aside class="col-md-12 single-sidebar-widget author-widget no-padding wow animated fadeInUp"  data-wow-delay=".2s">
+                            <div class="author-bg">
+                                <img src="{% static 'img/posts/author-bg.png' %}" alt="" >
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">
+                                    <div class="author-intro">
+                                        <h3>Kieran Wood</h3>
+                                        <p>Fullstack Developer</p>
+                                    </div>
+                                    <div class="author-image">
+                                        <img src="{% static 'img/posts/authors/kieran.png' %}" alt="" class="img-circle">
+                                    </div>
+                                </div>
+                                <div class="author-bio">
+                                    <p>Hi i'm Kieran, I founded Canadian Coding. Hope you enjoyed the post, and if you're interested in my work checkout my github.</p>
+                                </div>
+                                <div class="author-social">
+                                <a href="//github.com/descent098" style="display: inline-block; width:35px; height:35px;" target="_blank">
+                                    <img src="{% static 'img/icons/github-logo.png'%}">
+                                </a>
+                                </div>
+                            </div>
+                        </aside>
 
 
-                    <a href="{{post.github_source}}" style="display: inline-block; width:35px; height:35px;">
-                        <img src="{% static 'img/icons/github-logo.png'%}">
-                    </a>
-                    <a href="{{post.instagram_link}}" style="display: inline-block; width:35px; height:35px;" > 
-                        <img src="{% static 'img/icons/instagram-logo.png'%}">
-                    </a>
+                        <!-- Single Sidebar -->
+                        <aside class="col-md-12 single-sidebar-widget flickr-widget no-padding wow animated fadeInUp"  data-wow-delay=".4s">
+                            <div class="sidebar-widget-title">
+                                <h2>Post Details</h2>
+                            </div>
+                            <ul class="categories-list">
+                              <li>
+                              <div class="single-post-meta">
+                                <div id="post-metadata">
+                                  <p>Language: {{post.language|capfirst}}</p>
+                                  <p>Post created: {{post.created}} </br>Last Updated {{post.last_modified}}</p>
+                              </div>
+                            </div>
+                              </li>
+                              <li>
+                                <a href="{{post.github_source}}" style="display: inline-block; width:35px; height:35px;" target="_blank">
+                                    <img src="{% static 'img/icons/github-logo.png'%}">
+                                </a>
+                                <a href="{{post.instagram_link}}" style="display: inline-block; width:35px; height:35px;" target="_blank"> 
+                                    <img src="{% static 'img/icons/instagram-logo.png'%}">
+                                </a>
+                              </li>
+                            </ul>
+                        </aside>
 
-
-                <div id="post-metadata">
-                    <p>Language: {{post.language|capfirst}}</p>
-                    <p>Post created: {{post.created}} Last Updated {{post.last_modified}}</p>
                 </div>
+            </div>
+        </section>
+        <!-- Material Blog Post section End -->
 
-                <button type="button" class="btn std-btn btn-sm btn-danger-filled" style="margin-left:5px;">
-                  <i class="fa fa-arrow-circle-o-left icons"></i>
-                  <a href="/posts" style="color:white;">Go back to all posts</a>
-                </button>
 {% endblock content %}
 
 

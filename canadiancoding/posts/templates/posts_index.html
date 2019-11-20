@@ -3,6 +3,24 @@
 
 {% block title %} Home {% endblock %}
 
+{% block navlinks %}
+              <li class="nav-item">
+                <a class="nav-link" href="/">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/posts">
+                  Posts
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/services">
+                  Services
+                </a>
+              </li>
+{% endblock navlinks %}
+
 {% block content %}
       <!-- sliders -->
       <div id="sliders">
@@ -14,22 +32,15 @@
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active">
                   
-                    <img src="{% static 'img/hero.jpg' %}" alt="">
+                    <img src="{% static 'img/posts/hero.jpg' %}" alt="">
                     <div class="carousel-caption">
                       <h3 class="slide-title animated fadeInDown"><span>Canadian Coding</span></h3>
-                      <h5 class="slide-text animated fadeIn">Lorem ipsum dolor sit amet, consectetuer adipiscing elit<br> Curabitur ultricies nisi Nam eget dui. Etiam rhoncus</h5>
-                      <a href="#" class="btn btn-lg btn-common animated fadeInUp">Get Started</a>
-                      <a href="#" class="btn btn-lg btn-border animated fadeInUp">Learn More</a>
+                      <h5 class="slide-text animated fadeIn">Want to up your development game? You've come to the right place.</h5>
+                      <a href="#portfolio" class="btn btn-lg btn-common animated fadeInUp page-scrolly">See our post catalogue</a>
                     </div>
                   </div>
 
                 </div>
-                <a class="carousel-control-prev" href="#carousel-slider" role="button" data-slide="prev">
-                  <i class="fa fa-chevron-left"></i>
-                </a>
-                <a class="carousel-control-next" href="#carousel-slider" role="button" data-slide="next">
-                  <i class="fa fa-chevron-right"></i>
-                </a>
               </div>
             </div>
           </div>
@@ -43,33 +54,27 @@
     <!-- About Section Start -->
     <div id="about" class="section-padding">
       <div class="container">
+        <h2 class="section-title wow fadeInDown animated" data-wow-delay="0.3s">Post Categories</h2>
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-xs-12">
+          <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="about block text-center">
-              <img src="{% static 'img/about/img1.png' %}" alt="">
-              <h5><a href="#">About Title</a></h5>
-              <p>Quisque sit amet libero purus. Nulla a dignissim quam. In hac habitasse platea dictumst.</p>
+              <img src="{% static 'img/about/award.svg' %}" alt="project-showcase">
+              <h5><a href="#">Project Showcase</a></h5>
+              <p>Showcasing community projects such as python modules, standalone framweorks and more.</p>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
+          <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="about block text-center">
-              <img src="{% static 'img/about/img2.png' %}" alt="">
-              <h5><a href="#">About Title</a></h5>
-              <p>Quisque sit amet libero purus. Nulla a dignissim quam. In hac habitasse platea dictumst.</p>
+              <img src="{% static 'img/about/book.svg' %}" alt="language-essentials">
+              <h5><a href="#">Language Essentials</a></h5>
+              <p>Looking at lesser-known built in features of languages, and techniques that are useful.</p>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
+          <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="about block text-center">
-              <img src="{% static 'img/about/img3.png' %}" alt="">
-              <h5><a href="#">About Title</a></h5>
-              <p>Quisque sit amet libero purus. Nulla a dignissim quam. In hac habitasse platea dictumst.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="about block text-center">
-              <img src="{% static 'img/about/img4.png' %}" alt="">
-              <h5><a href="#">About Title</a></h5>
-              <p>Quisque sit amet libero purus. Nulla a dignissim quam. In hac habitasse platea dictumst.</p>
+              <img src="{% static 'img/about/thumbs-up.svg' %}" alt="language-overview">
+              <h5><a href="#">Language Overview</a></h5>
+              <p>A quick, and high level look at language syntax, type disciplines, and other basic essentials.</p>
             </div>
           </div>
         </div>
@@ -77,122 +82,13 @@
     </div>
     <!-- About Section End -->
 
-    <!-- Services Section Start -->
-    <section id="services" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="section-title wow fadeInDown animated" data-wow-delay="0.3s">Our Services</h2>
-          </div>
-        </div>
-        <div class="row">
-          <!-- Start Service Icon 1 -->
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="service-box">
-              <div class="service-icon">
-                <i class="fa fa-cogs"></i>
-              </div>
-              <div class="service-content">
-                <h4><a href="#">Easy to Customize</a></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- End Service Icon 1 -->
-
-          <!-- Start Service Icon 2 -->
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="service-box">
-              <div class="service-icon">
-                <i class="fa fa-cubes"></i>
-              </div>
-              <div class="service-content">
-                <h4><a href="#">100+ Components</a></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- End Service Icon 2 -->
-
-          <!-- Start Service Icon 3 -->
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="service-box">
-              <div class="service-icon">
-                <i class="fa fa-tachometer"></i>
-              </div>
-              <div class="service-content">
-                <h4><a href="#">Super Fast</a></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- End Service Icon 3 -->
-
-          <!-- Start Service Icon 4 -->
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="service-box">
-              <div class="service-icon">
-                <i class="fa fa-check"></i>
-              </div>
-              <div class="service-content">
-                <h4><a href="#">Clean Design</a></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- End Service Icon 4 -->
-
-          <!-- Start Service Icon 5 -->
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="service-box">
-              <div class="service-icon">
-                <i class="fa fa-flash"></i>
-              </div>
-              <div class="service-content">
-                <h4><a href="#">Bootstrap 4 UI Kit</a></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- End Service Icon 5 -->
-          
-          <!-- Start Service Icon 6 -->
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="service-box">
-              <div class="service-icon">
-                <i class="fa fa-hand-pointer-o"></i>
-              </div>
-              <div class="service-content">
-                <h4><a href="#">Advanced Features</a></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- End Service Icon 6 -->
-        </div>
-      </div>
-    </section>
-    <!-- Services Section End -->
-
     <!-- facts Section Start -->
     <div id="counter">
       <div class="container">
         <div class="row count-to-sec">
 
           <div class="col-lg-3 col-md-6 col-xs-12 count-one">
-            <span class="icon"><i class="fa fa-coffee"> </i></span>
+            <span class="icon"><i class="fa fa-calendar"> </i></span>
             <h3 class="timer count-value" data-to="4" data-speed="1000">4</h3>
             <hr class="width25-divider">
             <small class="count-title">Months of Posting</small>
@@ -239,21 +135,32 @@
           <div class="col-lg-12 col-md-12">
             <!-- Portfolio Controller/Buttons -->
             <div class="controls text-center wow fadeInUpQuick" data-wow-delay=".6s">
-              <a class="filter active btn btn-common" data-filter="all">
+              <a class="filter active btn btn-portfolio" data-filter="all">
                 All 
               </a>
-              <a class="filter btn btn-common" data-filter=".python">
+              <a class="filter btn btn-portfolio" data-filter=".python">
                 Python 
               </a>
-              <a class="filter btn btn-common" data-filter=".go">
+              <a class="filter btn btn-portfolio" data-filter=".go">
                 Go
               </a>
-              <a class="filter btn btn-common" data-filter=".rust">
-                Rust 
-              </a>
-              <a class="filter btn btn-common" data-filter=".processing">
+              
+              <a class="filter btn btn-portfolio" data-filter=".processing">
                 Processing 
               </a>
+
+              <a class="filter btn btn-portfolio" data-filter=".javascript">
+                Javascript 
+              </a>
+          
+              <a class="filter btn btn-portfolio" data-filter=".c">
+                c 
+              </a>
+
+            <!-- TODO: Uncomment when needed
+              <a class="filter btn btn-portfolio" data-filter=".rust">
+                Rust 
+            </a> -->
             </div>
             <!-- Portfolio Controller/Buttons Ends-->
           </div>
@@ -261,8 +168,8 @@
           
           <!-- Portfolio Recent Projects -->
           <div id="portfolio" class="row wow fadeInUpQuick" data-wow-delay="0.8s">
-            {% for post in posts %}
-            <!--TODO: parameterize filtering-->
+            {% for post in posts reversed %}
+
             {% if post.language == "python"%}
                 <div class="col-lg-4 col-md-6 col-xs-12 mix python">
                     
@@ -271,6 +178,15 @@
 
             {% elif post.language == "javascript"%}
                 <div class="col-lg-4 col-md-6 col-xs-12 mix javascript">
+            
+            {% elif post.language == "c"%}
+                <div class="col-lg-4 col-md-6 col-xs-12 mix c">
+
+            {% elif post.language == "processing"%}
+                <div class="col-lg-4 col-md-6 col-xs-12 mix processing">
+
+            {% elif post.language == "rust"%}
+                <div class="col-lg-4 col-md-6 col-xs-12 mix rust">
 
             {% else %}
                 <div class="col-lg-4 col-md-6 col-xs-12 mix">
@@ -280,10 +196,8 @@
 
 
               <div class="portfolio-item">
-                <!--TODO: Parameterize card-->
                 <div class="portfolio-img">
-                <!--TODO: Determine if this is useful-->
-                  <div class="post-type centered" style="font-size: 15px;">{{post.category|title}}</div>
+                  <div class="post-type centered" style="font-size: 15px;"><!-- TODO: Find way to properly filter the category{{post.category|title}}--></div>
                   <div class="post-heading centered" style="font-size:25px;">{{post.title|truncatechars:75}}</div>
                   <div class="post-sub-heading centered" style=" margin-top:25px;">{{post.subheading|truncatechars:125}}</div>
                   {% if post.language == "python"%}
@@ -294,6 +208,12 @@
 
                   {% elif post.language == "javascript"%}
                     <img src="{% static 'img/posts/javascript-card-layout.png' %}" alt="javascript-post-image" />
+
+                  {% elif post.language == "c"%}
+                    <img src="{% static 'img/posts/c-card-layout.png' %}" alt="c-post-image" />
+
+                  {% elif post.language == "processing"%}
+                    <img src="{% static 'img/posts/processing-card-layout.png' %}" alt="processing-post-image" />
 
                   {% else %}
                     <img src="{% static 'img/posts/card-layout.png' %}" alt="post-image" />
@@ -306,7 +226,7 @@
                     <div class="sup-desc-inner">
                       <div class="sup-link">
                         <a class="left-link" href="/posts/details/{{post.id}}"><i class="fa fa-link"></i></a>
-                        <a class="right-link" href="{{post.github_source}}"><i class="fa fa-github"></i></a>
+                        <a class="right-link" href="{{post.github_source}}" target="_blank"><i class="fa fa-github"></i></a>
                       </div>
                       <div class="sup-meta-wrap">
                         <a class="sup-title" href="/posts/details/{{post.id}}">

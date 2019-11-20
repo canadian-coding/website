@@ -4,6 +4,11 @@ Author: UIdeck
 Website: https://uideck.com
 More Info: https://uideck.com/products/helium-ui-kit
 */
+
+html{
+  scroll-behavior: smooth;
+}
+
 @import url("https://fonts.googleapis.com/css?family=Rubik:400,700|Montserrat:700");
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
@@ -52,6 +57,28 @@ a {
 a:hover, a:active, a:focus {
   color: #2E7D32;
   text-decoration: none;
+}
+
+.title-middle>h1{
+  margin-left:50px;
+  font-size: 2em;
+}
+@media only screen and (max-width: 376px) {
+  .title-middle>h1{
+    margin-left:5px;
+    font-size: 2em;
+  }
+}
+
+.title-middle>h2{
+  margin-left:50px;
+  margin-top:25px;
+}
+@media only screen and (max-width: 376px) {
+  .title-middle>h2{
+    margin-left:5px;
+    margin-top:175px;
+  }
 }
 
 p {
@@ -818,12 +845,24 @@ footer .menu li a:hover {
 
 /* Default Button */
 .btn-common, .btn-common:active, .btn-common:focus {
-  color: #2E7D32;
-  border: 2px solid #2E7D32;
-  background: transparent;
+  color: rgb(221, 221, 221);
+  border: 2px solid rgb(59, 144, 63);
+  background: #2E7D32;
 }
 
 .btn-common:hover {
+  color: #fff;
+  background: #2E7D32;
+  border: 2px solid #2E7D32;
+}
+
+.btn-portfolio, .btn-common:active, .btn-common:focus {
+  color:#2E7D32;
+  border: 2px solid rgb(59, 144, 63);
+  background: transparent;
+}
+
+.btn-portfolio:hover {
   color: #fff;
   background: #2E7D32;
   border: 2px solid #2E7D32;

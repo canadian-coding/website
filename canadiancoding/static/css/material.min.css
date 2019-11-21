@@ -573,25 +573,6 @@ body .container-fluid .well-danger {
     font-size: 10px
 }
 
-.btn-group-vertical.disabled,
-.btn-group-vertical:disabled,
-.btn-group-vertical[disabled][disabled],
-.btn-group.disabled,
-.btn-group:disabled,
-.btn-group[disabled][disabled],
-.btn.disabled,
-.btn:disabled,
-.btn[disabled][disabled],
-.input-group-btn .btn.disabled,
-.input-group-btn .btn:disabled,
-.input-group-btn .btn[disabled][disabled],
-fieldset[disabled][disabled] .btn,
-fieldset[disabled][disabled] .btn-group,
-fieldset[disabled][disabled] .btn-group-vertical,
-fieldset[disabled][disabled] .input-group-btn .btn {
-    color: rgba(0, 0, 0, .26);
-    background: 0 0
-}
 
 .theme-dark .btn-group-vertical.disabled,
 .theme-dark .btn-group-vertical:disabled,

@@ -1,0 +1,364 @@
+{% extends 'app-shell.html' %}
+{% load static %}
+{% load pwa %}
+
+
+{% block title %}Services{% endblock title%}
+
+{% block navlinks %}
+              <li class="nav-item">
+                <a class="nav-link" href="/">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/posts">
+                  Posts
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/services">
+                  Services
+                </a>
+              </li>
+{% endblock navlinks %}
+
+{% block content %}
+      <!-- sliders -->
+      <div id="sliders">
+        <div class="full-width">
+          <!-- light slider -->
+          <div id="light-slider" class="carousel slide">
+            <div id="carousel-area">
+              <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                  
+                    <img src="{% static 'img/hero.jpg' %}" alt="">
+                    <div class="carousel-caption">
+                      <h3 class="slide-title animated fadeInDown"><span>What do we do?</span></h3>
+                      <h5 class="slide-text animated fadeIn">Web development, content development, and much more.</h5>
+                      <a href="#services" class="btn btn-lg btn-common animated fadeInUp">Learn more</a>
+                      <a href="#contactForm" class="btn btn-lg btn-border animated fadeInUp">Get a quote</a>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End sliders -->
+
+    </header>
+    <!-- Header Area wrapper End -->
+
+    <!-- Services Section Start -->
+    <section id="services" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="section-title wow fadeInDown animated" data-wow-delay="0.3s">Our Services</h2>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Start Service Icon 1 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-cogs"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Easy to Customize</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 1 -->
+
+          <!-- Start Service Icon 2 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-cubes"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">100+ Components</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 2 -->
+
+          <!-- Start Service Icon 3 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-tachometer"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Super Fast</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 3 -->
+
+          <!-- Start Service Icon 4 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-check"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Clean Design</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 4 -->
+
+          <!-- Start Service Icon 5 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-flash"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Bootstrap 4 UI Kit</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 5 -->
+          
+          <!-- Start Service Icon 6 -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fa fa-hand-pointer-o"></i>
+              </div>
+              <div class="service-content">
+                <h4><a href="#">Advanced Features</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Icon 6 -->
+        </div>
+      </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- Material Pricing Table -->
+    <section class="Material-pricing-table-section section-padding" >
+      <div class="container">
+        <h1 class="section-title text-center">
+          Services
+        </h1>
+        <div class="row">
+          <!-- Single Table -->
+          <div class="col-md-4 wow fadeInUp animated" data-wow-delay=".3s">
+            <div class="pricing-table pricing-table-3 text-center">
+              <div class="table-header">
+                <h3>
+                  Content Development
+                </h3>
+              </div>
+              <div class="plan">
+                <h3 class="price">
+                  $35.00/hr
+                </h3>
+                <p class="period">
+                  Content creation, refactoring, and optimization
+                </p>
+              </div>
+              <div class="plan-info">
+                <p>
+                  Text, Photo, and Video Creation
+                </p>
+                <p>
+                  Refactoring of Existing Content
+                </p>
+                <p>
+                  Full Commercial Licensing
+                </p>
+                <p>
+                  Client Workflow Optimization
+                </p>
+                <p>
+                  SEO and Load Time Improvement
+                </p>
+                <div class="button-area">
+                  <a href="#contactForm" class="btn btn-common btn-lg">
+                    Get in Touch
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single Table -->
+         <div class="col-md-4 wow fadeInUp animated" data-wow-delay=".4s">
+            <div class="pricing-table pricing-table-3 text-center">
+              <div class="table-header">
+                <h3>
+                  Web Development
+                </h3>
+              </div>
+              <div class="plan">
+                <h3 class="price">
+                  Contact us
+                </h3>
+                <p class="period">
+                  Any custom development of Websites or Webapps
+                </p>
+              </div>
+              <div class="plan-info">
+                <p>
+                  Creation of Full Stand-alone sites
+                </p>
+                <p>
+                  Creation of Web Apps
+                </p>
+                <p>
+                  Development of Microservices
+                </p>
+                <p>
+                  Autonomous Hosting
+                </p>
+                <p>
+                  Creation of Web based Native Apps
+                </p>
+                <div class="button-area">
+                  <a href="#contactForm" class="btn btn-common btn-lg">
+                    Get Quote
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Single Table -->
+          <div class="col-md-4 wow fadeInUp animated" data-wow-delay=".6s">
+            <div class="pricing-table pricing-table-3 text-center">
+              <div class="table-header">
+                <h3>
+                  Consultation and Support
+                </h3>
+              </div>
+              <div class="plan">
+                <h3 class="price">
+                  $55.00/hr
+                </h3>
+                <p class="period">
+                  Supporting existing systems or consulting on existing contracts.
+                </p>
+              </div>
+              <div class="plan-info">
+                <p>
+                  Infastructure Planning and Development
+                </p>
+                <p>
+                  Troubleshooting of Existing Systems
+                </p>
+                <p>
+                  Extend Functionality of Existing Systems
+                </p>
+                <p>
+                  Assisting on an Existing Contract
+                </p>
+                <p>
+                  Requirements Gathering
+                </p>
+                <div class="button-area">
+                  <a href="#contactForm" class="btn btn-common btn-lg">
+                    Get in Touch
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Material Pricing Table End -->
+
+<!-- Call to action Section -->
+      <section class="call-to-action-section">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-8 text-left wow animated fadeInLeft" data-wow-delay=".2s">
+                <h1>What up nerd.</h1>
+                <h3>hit me with the $$</h3>
+            </div>
+            <div class="col-4 mt-4 text-right wow animated fadeInRight" data-wow-delay=".3s">
+                <a href="javascript:void(0)" class="animated4 btn btn-common"><i class="material-icons mdi mdi-phone"></i> Contact us</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Call to action Section End -->
+
+
+      <!-- Contact Us Section -->
+      <section class="Material-contact-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="contact-title text-center wow animated fadeInDown" data-wow-delay=".2s">We’re always here to hear form you</h1>
+                </div>
+            </div>
+            <div class="row mt-5">
+
+                <!-- contact form -->
+                <div class="col-md-12 wow fadeInUp animated" data-wow-delay=".5s">
+                  <h2 class="subtitle">Contact Form</h2>
+                    <form class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
+                        <!-- Name -->
+                        <div class="form-group label-floating">
+                          <label class="control-label" for="name">Name</label>
+                          <input class="form-control" id="name" type="text" name="name" required data-error="Please enter your name">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- email -->
+                        <div class="form-group label-floating">
+                          <label class="control-label" for="email">Email</label>
+                          <input class="form-control" id="email" type="email" name="email" required data-error="Please enter your Email">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- Subject -->
+                        <div class="form-group label-floating">
+                          <label class="control-label" for="msgSubject">Subject</label>
+                          <input class="form-control" id="msg_subject" type="text" name="subject" required data-error="Please enter your message subject">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- Message -->
+                        <div class="form-group label-floating">
+                            <label for="message" class="control-label">Message</label>
+                            <textarea class="form-control" rows="3" id="message" name="message" required data-error="Write your message"></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- Form Submit -->
+                        <div class="form-submit mt-4">
+                            <button class="btn btn-lg btn-common animated fadeInUp" type="submit" id="form-submit"><i class="material-icons mdi mdi-message-outline"></i> Send Message</button>
+                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Us Section End -->
+
+{% endblock content %}

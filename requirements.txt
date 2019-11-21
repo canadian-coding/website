@@ -12,3 +12,5 @@ Markdown
 django-pwa
 whitenoise
 whitenoise[brotli]
+django-heroku
+gunicorn

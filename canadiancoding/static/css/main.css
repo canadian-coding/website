@@ -338,7 +338,6 @@ strong {
 
 /* Header Style 1*/
 #header-style-1 {
-  background-image: url("../img/bg/hero-1-bg.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -396,7 +395,6 @@ strong {
 
 /* Header Style 3*/
 .header-style-3 {
-  background: url("../img/bg/hero-3-bg.jpg") no-repeat left center;
   background-size: cover;
   padding-top: 80px;
 }
@@ -2170,7 +2168,6 @@ nav#menu span.fa.fa-bars:hover {
 /* / End About */
 /* Start Tesitmonial  */
 .single-testimonial-area {
-  background-image: url(../img/about/testimonial-bg.jpg);
   background-size: cover;
   padding: 60px 0;
 }
@@ -2880,7 +2877,7 @@ nav#menu span.fa.fa-bars:hover {
 /*  End Progress Bars */
 /* Caounter Style */
 #counter {
-  background-image: url(../img/about/testimonial-bg.jpg);
+
   background-size: cover;
   padding: 60px 0;
 }
@@ -2940,7 +2937,7 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 #dark-slider .slide1 {
-  background-image: url("../img/dark-bg-image.jpg");
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -2948,7 +2945,7 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 #dark-slider .slide2 {
-  background-image: url("../img/dark-bg-image.jpg");
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

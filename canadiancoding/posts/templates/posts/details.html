@@ -118,25 +118,28 @@
                         <!-- Single Sidebar -->
                         <aside class="col-md-12 single-sidebar-widget author-widget no-padding wow animated fadeInUp"  data-wow-delay=".2s">
                             <div class="author-bg">
-                                <img src="{% static 'img/posts/author-bg.png' %}" alt="" >
+                                <img src="{% static 'img/posts/author-bg.png' %}" alt="{{ post.author.first_name }} {{ post.author.last_name }}" >
                             </div>
                             <div class="author-info">
                                 <div class="author-name">
                                     <div class="author-intro">
-                                        <h3>Kieran Wood</h3>
-                                        <p>Fullstack Developer</p>
+                                        <h3>{{ post.author.first_name }} {{ post.author.last_name }}</h3>
+                                        <p style="line-height:100%">{{ post.author.company }}<br>
+                                        {{ post.author.title }}</p>
                                     </div>
                                     <div class="author-image">
                                         <img src="{% static 'img/posts/authors/kieran.png' %}" alt="" class="img-circle">
                                     </div>
                                 </div>
                                 <div class="author-bio">
-                                    <p>Hi i'm Kieran, I founded Canadian Coding. Hope you enjoyed the post, and if you're interested in my work checkout my github.</p>
+                                    <p>{{ post.author.description }}</p>
                                 </div>
                                 <div class="author-social">
-                                <a href="//github.com/descent098" style="display: inline-block; width:35px; height:35px;" target="_blank">
+
+                                  <a href="{{ post.author.github_link }}" style="display: inline-block; width:35px; height:35px;" target="_blank">
                                     <img src="{% static 'img/icons/github-logo.png'%}">
-                                </a>
+                                  </a>
+
                                 </div>
                             </div>
                         </aside>

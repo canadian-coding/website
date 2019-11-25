@@ -6,6 +6,26 @@ from markdownx.models import MarkdownxField # From django-markdownx
 
 # Create your models here.
 
+class Author(models.Model):
+    first_name = models.CharField(max_length = 75)
+    last_name = models.CharField(max_length = 75)
+    description = models.TextField()
+    company = models.CharField(max_length = 75, blank=True)
+    title = models.CharField(max_length = 75, blank=True)
+    languages = models.CharField(max_length = 100, blank=True)
+    github_link = models.URLField(blank=True)
+    instagram_link = models.URLField(blank=True)
+    linkedin_link = models.URLField(blank=True)
+    twitter_link = models.URLField(blank=True)
+
+    def __str__(self):
+        """Sets display in admin view"""
+        return f"{self.first_name}  {self.last_name}"
+
+    class Meta:
+        """Used to overwrite model attributes"""
+        verbose_name_plural = "Authors"
+
 class Posts(models.Model):
     language_choices = [
        #(key, displayed_value)
@@ -27,6 +47,7 @@ class Posts(models.Model):
     ]
     title = models.CharField(max_length = 75)
     subheading = models.CharField(max_length = 125)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
     language = models.CharField(max_length = 100, choices = language_choices)
     category = models.CharField(max_length = 100, choices = post_categories)
     github_source = models.URLField(default = "https://github.com/canadian-coding/posts/tree/master/")

@@ -19,20 +19,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-
-SECRET_KEY_PATH = os.path.join(os.path.dirname(__file__), "secretkey.txt")
-if os.path.exists(SECRET_KEY_PATH): # If secretkey file exists
-    with open(SECRET_KEY_PATH, 'r') as secretkeyfile:
-        SECRET_KEY = secretkeyfile.readlines()
-else: # If no secret key file exists
-    print("Using defined secretkey")
-    SECRET_KEY = 'h=fe2puya549v50l)f3j0)*2nu6$wo5^e4zz^$8ddyr4yii600'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG")
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["canadian-coding-website.herokuapp.com"]
 
 
 # Application definition
@@ -138,9 +130,9 @@ STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
    ]
 
-STATIC_ROOT = "/var/www/example.com/static/" #TODO: Set properly for heroku
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Ability to change theme in admin view
 JET_THEMES = [

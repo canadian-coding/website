@@ -1,2 +1,2 @@
-release: /canadiancoding/python manage.py migrate
-web: gunicorn /canadiancoding/canadiancoding.wsgi runserver
+release: python manage.py migrate
+web: gunicorn canadiancoding.wsgi runserver

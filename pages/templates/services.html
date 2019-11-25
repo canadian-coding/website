@@ -34,7 +34,7 @@
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active">
                   
-                    <img src="{% static 'img/hero.jpg' %}" alt="">
+                    <img src="{% static 'img/services-hero.jpg' %}" alt="">
                     <div class="carousel-caption">
                       <h3 class="slide-title animated fadeInDown"><span>What do we do?</span></h3>
                       <h5 class="slide-text animated fadeIn">Web development, content development, and much more.</h5>
@@ -67,10 +67,13 @@
                 <i class="fa fa-cogs"></i>
               </div>
               <div class="service-content">
-                <h4><a href="#">Easy to Customize</a></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
-                </p>
+                <h4>Backend/Microservice Creation</h4>
+                <ul>
+                  <li>Database interface development.</li> <br>
+                  <li>Endpoint development (REST, XML, RSS etc.).</li> <br>
+                  <li>Microservice development such as addding an authoring layer to an existing system.</li> <br>
+                </ul>
+                  
               </div>
             </div>
           </div>
@@ -83,10 +86,12 @@
                 <i class="fa fa-cubes"></i>
               </div>
               <div class="service-content">
-                <h4><a href="#">100+ Components</a></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
-                </p>
+                <h4>Webapp Creation</h4>
+                <ul>
+                  <li>Desktop-based webapp client development.</li> <br>
+                  <li>Development of web based mobile apps targeting Google Play Store (android) and App Store (ios).</li> <br>
+                  <li>Microservice development such as addding an authoring layer to an existing system.</li> <br>
+                </ul>
               </div>
             </div>
           </div>
@@ -96,65 +101,19 @@
           <div class="col-md-6 col-lg-4 col-xs-12">
             <div class="service-box">
               <div class="service-icon">
-                <i class="fa fa-tachometer"></i>
+                <i class="fa fa-html5"></i>
               </div>
               <div class="service-content">
-                <h4><a href="#">Super Fast</a></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
-                </p>
+                <h4>Front End Development</h4>
+                <ul>
+                  <li>Design overhaul of an existing fullstack system.</li> <br>
+                  <li>Creation of a client facing interface for existing backend.</li> <br>
+                  <li>Retooling/reorganization of an existing interface to increase user experience</li> <br>
+                </ul>
               </div>
             </div>
           </div>
           <!-- End Service Icon 3 -->
-
-          <!-- Start Service Icon 4 -->
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="service-box">
-              <div class="service-icon">
-                <i class="fa fa-check"></i>
-              </div>
-              <div class="service-content">
-                <h4><a href="#">Clean Design</a></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- End Service Icon 4 -->
-
-          <!-- Start Service Icon 5 -->
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="service-box">
-              <div class="service-icon">
-                <i class="fa fa-flash"></i>
-              </div>
-              <div class="service-content">
-                <h4><a href="#">Bootstrap 4 UI Kit</a></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- End Service Icon 5 -->
-          
-          <!-- Start Service Icon 6 -->
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="service-box">
-              <div class="service-icon">
-                <i class="fa fa-hand-pointer-o"></i>
-              </div>
-              <div class="service-content">
-                <h4><a href="#">Advanced Features</a></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto officiis consequuntur vero error excepturi.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- End Service Icon 6 -->
         </div>
       </div>
     </section>
@@ -307,7 +266,7 @@
                 <!-- contact form -->
                 <div class="col-md-12 wow fadeInUp animated" data-wow-delay=".5s">
                   <h2 class="subtitle">Contact Form</h2>
-                    <form class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
+                    <form class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator"action="https://formspree.io/kieran.wood1@ucalgary.ca" method="POST">
                         <!-- Name -->
                         <div class="form-group label-floating">
                           <label class="control-label" for="name">Name</label>
@@ -334,7 +293,9 @@
                         </div>
                         <!-- Form Submit -->
                         <div class="form-submit mt-4">
-                            <button class="btn btn-lg btn-common animated fadeInUp" type="submit" id="form-submit"><i class="material-icons mdi mdi-message-outline"></i> Send Message</button>
+
+                            <button class="btn btn-lg btn-common animated fadeInUp" type="submit" id="form-submit" value="Send"><i class="material-icons mdi mdi-message-outline"></i> Send Message</button>
+
                             <div id="msgSubmit" class="h3 text-center hidden"></div>
                             <div class="clearfix"></div>
                         </div>

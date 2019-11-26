@@ -1,0 +1,223 @@
+{% extends 'app-shell.html' %}
+
+{% load markdown_extras %}
+{% load static %}
+
+{% block title %} {{module.number}} {{ module.title }} | Module{% endblock %}
+
+{% block navlinks %}
+              <li class="nav-item">
+                <a class="nav-link" href="/">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/posts">
+                  Posts
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/services">
+                  Services
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/courses">
+                  Courses
+                </a>
+              </li>
+{% endblock navlinks %}
+
+{% block content %}
+<style>
+
+.navbar-nav .nav-link {
+  color: #141414;
+  font-size: 14px;
+  margin-right: 18px;
+  font-weight: 400;
+  padding: 18px 0px;
+}
+#github{
+      background:#141414;
+    }
+#instagram{ 
+      width:40px; height:40px;
+      background: #f09433; 
+      background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+      background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+      background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    }
+
+  .page-title-section{
+    {% if module.language == "python"%}
+    position:relative;background:url({% static 'img/post-banners/python-post-banner.png' %}) 
+    
+    {% elif module.language == "go"%}
+    position:relative;background:url({% static 'img/post-banners/go-post-banner.png' %}) 
+
+    {% elif module.language == "javascript"%}
+    position:relative;background:url({% static 'img/post-banners/javascript-post-banner.png' %}) 
+
+    {% elif module.language == "processing"%}
+    position:relative;background:url({% static 'img/post-banners/processing-post-banner.png' %}) 
+
+    {% elif module.language == "c"%}
+    position:relative;background:url({% static 'img/post-banners/c-post-banner.png' %}) 
+
+    {% else %}
+    position:relative;background:url({% static 'img/post-banners/post-banner.png' %}) 
+    
+    {% endif %}
+    
+    no-repeat scroll center center;
+    background-size:cover}
+</style>
+
+
+<!--HighlightJS loading-->
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+        <!-- Page Titile Area -->
+        <section class="page-title-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-center">
+                            <div class="title-middle">
+                                <h2 class="page-tagline">{{ module.language }}</h2>
+                                <h1 class="page-title" style="width: 350px;word-wrap: break-word;">{{ module.number }} {{ module.title }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Titile Area End -->
+
+        <!-- Material Blog Post section -->
+        <section class="Material-blog-post-page section-padding">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Blog Post -->
+                    <div class="single-blog-page col-md-12 col-lg-8 col-xs-12">
+                        <article class="single-post wow fadeInUp animated"  data-wow-delay=".2s">
+                            <div id="markdown-content">
+                            {% if module.youtube_id %}
+                            <iframe width="100%" height="400" src="https://www.youtube.com/embed/{{ module.youtube_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            {% endif %}
+                                {{module.content|markdown|safe}}
+
+
+                                <h3>Exercises</h3>
+                                {{module.exercises|markdown|safe}}
+
+
+                                <h3>Challenges</h3>
+                                {{module.challenges|markdown|safe}}
+
+
+                                <h3>Solutions</h3>
+                                {{module.solutions|markdown|safe}}
+                            
+                            </div> 
+                            
+                        </article>
+                        <div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Sidebar -->
+                    <div class="col-md-12 col-lg-4 col-xs-12 blog-sidebar-column">
+                        <!-- Single Sidebar -->
+                        <aside class="col-md-12 single-sidebar-widget author-widget no-padding wow animated fadeInUp"  data-wow-delay=".2s">
+                            <div class="author-bg">
+                                <img src="{% static 'img/posts/author-bg.png' %}" alt="{{ module.author.first_name }} {{ module.author.last_name }}" >
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">
+                                    <div class="author-intro">
+                                        <h3>{{ module.author.first_name }} {{ module.author.last_name }}</h3>
+                                        <p style="line-height:100%">{{ module.author.company }}<br>
+                                        {{ module.author.title }}</p>
+                                    </div>
+                                    <div class="author-image">
+                                        <img src="{% static 'img/posts/authors/kieran.png' %}" alt="" class="img-circle">
+                                    </div>
+                                </div>
+                                <div class="author-bio">
+                                    <p>{{ module.author.description }}</p>
+                                </div>
+                                <div class="author-social">
+
+                                  <a href="{{ module.author.github_link }}" style="display: inline-block; width:35px; height:35px;" target="_blank">
+                                    <img src="{% static 'img/icons/github-logo.png'%}">
+                                  </a>
+
+                                </div>
+                            </div>
+                        </aside>
+
+
+                        <!-- Single Sidebar -->
+                        <aside class="col-md-12 single-sidebar-widget flickr-widget no-padding wow animated fadeInUp"  data-wow-delay=".4s">
+                            <div class="sidebar-widget-title">
+                                <h2>Course Details</h2>
+                            </div>
+                            <ul class="categories-list">
+                              <li>
+                              <div class="single-post-meta">
+                                <div id="module-metadata">
+                                <p>{{ module.course.code }} {{ module.course.short_description }}</p>
+                                  <p>Language: {{module.language|capfirst}}</p>
+                              </div>
+                            </div>
+                              </li>
+                              <li>
+                                <a href="{{module.github_link}}" style="display: inline-block; width:35px; height:35px;" target="_blank">
+                                    <img src="{% static 'img/icons/github-logo.png'%}">
+                                </a>
+                                <a href="{{module.youtube_playlist_link}}" style="display: inline-block; width:35px; height:35px;" target="_blank"> 
+                                    <!--TODO Change to youtube logo--><img src="{% static 'img/icons/instagram-logo.png'%}">
+                                </a>
+                              </li>
+                            </ul>
+                        </aside>
+
+                        <!-- Single Sidebar -->
+                        <aside class="col-md-12 single-sidebar-widget flickr-widget no-padding wow animated fadeInUp"  data-wow-delay=".4s">
+                            <div class="sidebar-widget-title">
+                                <h2>Course Modules</h2>
+                            </div>
+                            <ul class="categories-list">
+
+                            {% if module.previous_module %}
+                            <li>Previous Module:
+                                <a href="/courses/module/{{ module.previous_module.id }}" style="color:green;">
+                                     {{ module.previous_module.number }} {{ module.previous_module.title }}
+                                </a>   
+                            </li> <br>
+                            {% endif %}
+
+                            {% if module.next_module %}
+                            <li>Next Module: 
+                                <a href="/courses/module/{{ module.next_module.id }}" style="color:green;">
+                                    {{ module.next_module.number }} {{ module.next_module.title }}
+                                </a>   
+                            </li> <br>
+                            {% endif %}
+                            
+                              
+                            </ul>
+                        </aside>
+
+                </div>
+            </div>
+        </section>
+        <!-- Material Blog Post section End -->
+
+{% endblock content %}

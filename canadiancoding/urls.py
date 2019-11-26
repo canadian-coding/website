@@ -25,6 +25,7 @@ urlpatterns = [
     path("jet/", include("jet.urls", "jet")), # Used by django-jet for admin UI elements
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('posts/', include('posts.urls')), # Forward to posts templates
+    path('courses/', include('courses.urls')), # Forward to posts templates
     path('markdownx/', include('markdownx.urls')), # Necessary for markdown editing fields in models
     
     path('admin/', admin.site.urls),

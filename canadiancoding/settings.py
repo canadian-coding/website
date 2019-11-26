@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["canadian-coding-website.herokuapp.com"]
 
 INSTALLED_APPS = [
     'posts', # Contains all dynamic and static pages related to posts
+    'courses', # Contains all dynamic and static pages related to courses and modules
     'pages', # Contains all static pages that are not post related
     'markdownx', # Allows for editing and creating markdown content
     'jet.dashboard',

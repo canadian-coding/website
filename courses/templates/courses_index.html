@@ -1,0 +1,189 @@
+{% extends 'app-shell.html' %}
+{% load static %}
+
+{% block title %} Posts {% endblock %}
+
+{% block navlinks %}
+              <li class="nav-item">
+                <a class="nav-link" href="/">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/posts">
+                  Posts
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/services">
+                  Services
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/courses">
+                  Courses
+                </a>
+              </li>
+{% endblock navlinks %}
+
+{% block content %}
+      <!-- sliders -->
+      <div id="sliders">
+        <div class="full-width">
+          <!-- light slider -->
+          <div id="light-slider" class="carousel slide">
+            <div id="carousel-area">
+              <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                  
+                    <img src="{% static 'img/courses-hero.jpg' %}" alt="">
+                    <div class="carousel-caption">
+                      <h3 class="slide-title animated fadeInDown"><span>Want to learn programming?</span></h3>
+                      <h5 class="slide-text animated fadeIn">Whether it's a new language, or your first we have you covered.</h5>
+                      <a href="#portfolio" class="btn btn-lg btn-common animated fadeInUp page-scrolly">See our courses</a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End sliders -->
+
+    </header>
+    <!-- Header Area wrapper End -->
+
+  
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding">
+      <!-- Container Starts -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="section-title wow fadeInDown animated" data-wow-delay="0.3s">Course List</h2>
+          </div>
+        </div>
+
+        
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <!-- Portfolio Controller/Buttons -->
+            <div class="controls text-center wow fadeInUpQuick" data-wow-delay=".6s">
+              <a class="filter active btn btn-portfolio" data-filter="all">
+                All 
+              </a>
+              <a class="filter btn btn-portfolio" data-filter=".python">
+                Python 
+              </a>
+              <a class="filter btn btn-portfolio" data-filter=".go">
+                Go
+              </a>
+              
+              <a class="filter btn btn-portfolio" data-filter=".processing">
+                Processing 
+              </a>
+
+              <a class="filter btn btn-portfolio" data-filter=".javascript">
+                Javascript 
+              </a>
+          
+              <a class="filter btn btn-portfolio" data-filter=".c">
+                c 
+              </a>
+
+            <!-- TODO: Uncomment when needed
+              <a class="filter btn btn-portfolio" data-filter=".rust">
+                Rust 
+            </a> -->
+            </div>
+            <!-- Portfolio Controller/Buttons Ends-->
+          </div>
+
+          
+          <!-- Portfolio Recent Projects -->
+          <div id="portfolio" class="row wow fadeInUpQuick" data-wow-delay="0.8s">
+            {% for course in courses reversed %}
+
+            {% if course.language == "python"%}
+                <div class="col-lg-4 col-md-6 col-xs-12 mix python">
+                    
+            {% elif course.language == "go"%}
+                <div class="col-lg-4 col-md-6 col-xs-12 mix go">
+
+            {% elif course.language == "javascript"%}
+                <div class="col-lg-4 col-md-6 col-xs-12 mix javascript">
+            
+            {% elif course.language == "c"%}
+                <div class="col-lg-4 col-md-6 col-xs-12 mix c">
+
+            {% elif course.language == "processing"%}
+                <div class="col-lg-4 col-md-6 col-xs-12 mix processing">
+
+            {% elif course.language == "rust"%}
+                <div class="col-lg-4 col-md-6 col-xs-12 mix rust">
+
+            {% else %}
+                <div class="col-lg-4 col-md-6 col-xs-12 mix">
+            
+            {% endif %}
+            
+
+
+              <div class="portfolio-item">
+                <div class="portfolio-img">
+                  <div class="post-type centered" style="font-size: 15px;"><!-- TODO: Find way to properly filter the category{{post.category|title}}--></div>
+                  <div class="post-heading centered" style="font-size:25px;">{{course.code|truncatechars:75}}</div>
+                  <div class="post-sub-heading centered" style=" margin-top:25px;">{{course.short_description|truncatechars:125}}</div>
+                  {% if course.language == "python"%}
+                    <img src="{% static 'img/posts/python-card-layout.png' %}" alt="python-post-image" />
+                        
+                  {% elif course.language == "go"%}
+                    <img src="{% static 'img/posts/go-card-layout.png' %}" alt="go-post-image" />
+
+                  {% elif course.language == "javascript"%}
+                    <img src="{% static 'img/posts/javascript-card-layout.png' %}" alt="javascript-post-image" />
+
+                  {% elif course.language == "c"%}
+                    <img src="{% static 'img/posts/c-card-layout.png' %}" alt="c-post-image" />
+
+                  {% elif course.language == "processing"%}
+                    <img src="{% static 'img/posts/processing-card-layout.png' %}" alt="processing-post-image" />
+
+                  {% else %}
+                    <img src="{% static 'img/posts/card-layout.png' %}" alt="post-image" />
+                
+                  {% endif %}
+                  
+                </div>
+                <div class="portfoli-content">
+                  <div class="sup-desc-wrap">
+                    <div class="sup-desc-inner">
+                      <div class="sup-link">
+                        <a class="left-link" href="/courses/course/{{course.id}}"><i class="fa fa-link"></i></a>
+                        <a class="right-link" href="{{course.github_link}}" target="_blank"><i class="fa fa-github"></i></a>
+                      </div>
+                      <div class="sup-meta-wrap">
+                        <a class="sup-title" href="/courses/course/{{course.id}}">
+                          <h4 style="font-size">{{course.code|truncatechars:75}}</h4>
+                        </a>
+                        <p class="sup-description">{{course.short_description|truncatechars:125}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        {% endfor %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Container Ends -->
+    </section>
+    <!-- Portfolio Section Ends -->
+{% endblock content %}

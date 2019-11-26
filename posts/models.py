@@ -6,6 +6,17 @@ from markdownx.models import MarkdownxField # From django-markdownx
 
 # Create your models here.
 
+language_choices = [
+    #(key, displayed_value)
+    ("python", "Python"),
+    ("go", "Go"),
+    ("c", "C"),
+    ("rust", "Rust"),
+    ("javascript", "JS"),
+    ("html", "HTML"),
+    ("processing", "Processing"),
+]
+
 class Author(models.Model):
     first_name = models.CharField(max_length = 75)
     last_name = models.CharField(max_length = 75)
@@ -27,16 +38,6 @@ class Author(models.Model):
         verbose_name_plural = "Authors"
 
 class Posts(models.Model):
-    language_choices = [
-       #(key, displayed_value)
-        ("python", "Python"),
-        ("go", "Go"),
-        ("c", "C"),
-        ("rust", "Rust"),
-        ("javascript", "JS"),
-        ("html", "HTML"),
-        ("processing", "Processing"),
-    ]
 
     post_categories = [
         ("language-essentials", "Language Essentials"), # Builtin libraries and language constructs
@@ -47,7 +48,7 @@ class Posts(models.Model):
     ]
     title = models.CharField(max_length = 75)
     subheading = models.CharField(max_length = 125)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, default=1, on_delete=models.SET_DEFAULT)
     language = models.CharField(max_length = 100, choices = language_choices)
     category = models.CharField(max_length = 100, choices = post_categories)
     github_source = models.URLField(default = "https://github.com/canadian-coding/posts/tree/master/")

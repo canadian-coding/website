@@ -12,3 +12,6 @@ Markdown
 django-pwa
 django-heroku
 gunicorn
+
+# Extras
+python-dateutil

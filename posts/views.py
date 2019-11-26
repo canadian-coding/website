@@ -1,17 +1,25 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Posts
+from .models import Posts, language_choices
 
+# Used to calculate how many months of posts have happened
+from datetime import datetime
+from dateutil import relativedelta
 # Create your views here.
 
 def index(request):
 
     posts = Posts.objects.order_by('-created')
+    first_post = datetime(2019, 6, 23)
 
+    difference = relativedelta.relativedelta(datetime.now(), first_post)
+    languages = len(language_choices)
     context = {
         'title': "Home",
         'posts': posts,
+        'difference': difference,
+        'languages' : languages
     }
 
     return render(request, "posts_index.html", context)

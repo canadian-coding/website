@@ -94,21 +94,21 @@
 
           <div class="col-lg-3 col-md-6 col-xs-12 count-one">
             <span class="icon"><i class="fa fa-calendar"> </i></span>
-            <h3 class="timer count-value" data-to="4" data-speed="1000">4</h3>
+            <h3 class="timer count-value" data-to="{{ difference.months }}" data-speed="1000">{{ difference.months }}</h3>
             <hr class="width25-divider">
             <small class="count-title">Months of Posting</small>
           </div>
 
           <div class="col-lg-3 col-md-6 col-xs-12 count-one">
             <span class="icon"><i class="fa fa-code"> </i></span>
-            <h3 class="timer count-value" data-to="6" data-speed="1000">6</h3>
+            <h3 class="timer count-value" data-to="{{ languages }}" data-speed="1000">{{ languages }}</h3>
             <hr class="width25-divider">
             <small class="count-title">Languages</small>
           </div>
 
           <div class="col-lg-3 col-md-6 col-xs-12 count-one">
             <span class="icon"><i class="fa fa-file"> </i></span>
-            <h3 class="timer count-value" data-to="30" data-speed="1000">30</h3>
+            <h3 class="timer count-value" data-to="{{ posts | length }}" data-speed="1000">{{ posts | length }}</h3>
             <hr class="width25-divider">
             <small class="count-title">Posts Created</small>
           </div>
@@ -254,3 +254,15 @@
     </section>
     <!-- Portfolio Section Ends -->
 {% endblock content %}
+
+<script>
+// Taken from https://stackoverflow.com/questions/2536379/difference-in-months-between-two-dates-in-javascript
+function monthDiff(d1, d2) {
+    var months;
+    months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    months -= d1.getMonth() + 1;
+    months += d2.getMonth();
+    return months <= 0 ? 0 : months;
+}
+
+</script>

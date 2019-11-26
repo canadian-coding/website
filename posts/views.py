@@ -7,7 +7,7 @@ from .models import Posts
 
 def index(request):
 
-    posts = Posts.objects.all()[:40]
+    posts = Posts.objects.order_by('created')
 
     context = {
         'title': "Home",

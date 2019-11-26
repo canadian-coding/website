@@ -44,7 +44,7 @@ def course_overview(request, id):
     render(): The course overview page for the given course id
     """
     course = Course.objects.get(id=id)
-    modules = Module.objects.filter(course=id)
+    modules = Module.objects.filter(course=id).order_by("number")
     context = {
         'course': course,
         'modules': modules

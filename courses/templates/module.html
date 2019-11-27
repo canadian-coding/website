@@ -90,7 +90,7 @@
                         <div class="title-center">
                             <div class="title-middle">
                                 <h2 class="page-tagline">{{ module.language }}</h2>
-                                <h1 class="page-title" style="width: 350px;word-wrap: break-word;">{{ module.number }} {{ module.title }}</h1>
+                                <h1 class="page-title" style="width: 350px;word-wrap: break-word;">{{ module.number }}. {{ module.title }}</h1>
                             </div>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                               <li>
                               <div class="single-post-meta">
                                 <div id="module-metadata">
-                                <p>{{ module.course.code }} {{ module.course.short_description }}</p>
+                                <p>{{ module.course.code }}: {{ module.course.short_description }}</p>
                                   <p>Language: {{module.language|capfirst}}</p>
                               </div>
                             </div>
@@ -198,7 +198,7 @@
                             {% if module.previous_module %}
                             <li>Previous Module:
                                 <a href="/courses/module/{{ module.previous_module.id }}" style="color:green;">
-                                     {{ module.previous_module.number }} {{ module.previous_module.title }}
+                                     {{ module.previous_module.number }}. {{ module.previous_module.title }}
                                 </a>   
                             </li> <br>
                             {% endif %}
@@ -206,7 +206,7 @@
                             {% if module.next_module %}
                             <li>Next Module: 
                                 <a href="/courses/module/{{ module.next_module.id }}" style="color:green;">
-                                    {{ module.next_module.number }} {{ module.next_module.title }}
+                                    {{ module.next_module.number }}. {{ module.next_module.title }}
                                 </a>   
                             </li> <br>
                             {% endif %}

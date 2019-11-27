@@ -8,3 +8,6 @@ def index(request):
 
 def service(request):
     return render(request, "services.html")
+
+def terms_of_service(request):
+    return render(request, "terms-of-service.html")

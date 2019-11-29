@@ -33,9 +33,9 @@ class Module(models.Model):
     github_link = models.URLField(blank=True)
     youtube_id = models.CharField(max_length=11, blank=True)
     content = MarkdownxField()
-    exercises = MarkdownxField()
-    challenges = MarkdownxField()
-    solutions = MarkdownxField()
+    exercises = models.TextField()
+    challenges = models.TextField()
+    solutions = models.TextField()
 
 
 

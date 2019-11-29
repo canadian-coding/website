@@ -37,6 +37,7 @@ class Author(models.Model):
         """Used to overwrite model attributes"""
         verbose_name_plural = "Authors"
 
+
 class Posts(models.Model):
 
     post_categories = [
@@ -62,3 +63,17 @@ class Posts(models.Model):
     class Meta:
         """Used to overwrite model attributes"""
         verbose_name_plural = "Posts"
+
+
+class DemoFiles(models.Model):
+    title = models.CharField(max_length = 50)
+    contents = models.TextField()
+    posts = models.ManyToManyField(Posts)
+
+    def __str__(self):
+        """Sets display in admin view"""
+        return f"{self.title}"
+
+    class Meta:
+        """Used to overwrite model attributes"""
+        verbose_name_plural = "Demo Files"

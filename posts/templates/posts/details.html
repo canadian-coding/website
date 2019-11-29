@@ -112,6 +112,65 @@
                             <div id="markdown-content">
                               {{post.content|markdown|safe}}
                             </div>
+
+                            {% if files %}
+                            <h3>Files</h3>
+                            {% for file in files %}
+                            {% if post.language == "python"%}
+                            <h5>{{file.title}}_demo.py</h5>
+
+                            {% elif post.language == "go"%}
+                            <h5>{{file.title}}Demo.go</h5>
+
+                            {% elif post.language == "javascript"%}
+                            <h5>{{file.title}}Demo.js</h5>
+
+                            {% elif post.language == "processing"%}
+                            <h5>/{{file.title}}/{{file.title}}Demo.pde</h5>
+
+                            {% elif post.language == "c"%}
+                            <h5>{{file.title}}_demo.c</h5>
+                            
+                            {% endif %}
+
+                                <div id = "{{file.title}}-demo" style="height: 100%; width: 100%;">{{file.contents}}</div>
+                                
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/ace.js" integrity="sha256-CVkji/u32aj2TeC+D13f7scFSIfphw2pmu4LaKWMSY8=" crossorigin="anonymous"></script>
+                                
+                                {% if post.language == "python"%}
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-python.js" integrity="sha256-MinL4s5SkQg5C0UzG79kKoTJMsTWOjdMX4v+i7bCPVI=" crossorigin="anonymous"></script>
+                                
+                                {% elif post.language == "go"%}
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-golang.js" integrity="sha256-seinyyHa2YgAOt1gV2W7eBd8UjbsOMcsRIiNPK31HZY=" crossorigin="anonymous"></script>
+
+                                {% elif post.language == "javascript"%}
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-javascript.js" integrity="sha256-9nVHCZW1SuyhaVgqmPk1XutGn+g/ASVBiVAheioldo4=" crossorigin="anonymous"></script>
+
+                                {% elif post.language == "processing"%}
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-java.js" integrity="sha256-1XEB2pIPtczUEj/9S7eq27qtCohpH125MWFxsf02bvU=" crossorigin="anonymous"></script> 
+
+                                {% elif post.language == "c"%}
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-c_cpp.js" integrity="sha256-eL+A+g74p1M4f0uZgCRQ+Oz/kMO+gM29SNAjoBStIWg=" crossorigin="anonymous"></script>
+                                
+                                {% endif %}
+                                
+                                
+                                <script>
+                                    var editor = ace.edit("{{file.title}}-demo",{
+                                      theme: "ace/theme/monokai",
+                                      mode: "ace/mode/python",
+                                      minLines: 3,
+                                      maxLines:100,
+                                      wrap: true,
+                                      autoScrollEditorIntoView: true
+                                    });
+
+                                    editor.setReadOnly(true);
+                                </script>
+                                <br>
+                                <br>
+                                {% endfor %} <!--End file iteration for loop-->
+                          {% endif %} <!-- End if statement for if files-->
                             
                         </article>
                         <div>
@@ -179,6 +238,9 @@
             </div>
         </section>
         <!-- Material Blog Post section End -->
+
+
+
 
 {% endblock content %}
 

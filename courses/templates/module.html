@@ -77,8 +77,7 @@
 
 
 <!--HighlightJS loading-->
-<link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs2015.min.css" integrity="sha256-9uLiFREx/Kkjh/rMpeUWdi+3+cr7Nr7GJukKXFp5qwU=" crossorigin="anonymous" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
@@ -96,6 +95,7 @@
                     </div>
                 </div>
             </div>
+            
         </section>
         <!-- Page Titile Area End -->
 
@@ -112,20 +112,23 @@
                             {% endif %}
                                 {{module.content|markdown|safe}}
 
-
                                 <h3>Exercises</h3>
-                                {{module.exercises|markdown|safe}}
-
+                                <div id = "exercises" style="height: 100%; width: 100%;">{{module.exercises}}</div>
 
                                 <h3>Challenges</h3>
-                                {{module.challenges|markdown|safe}}
+                                <div id = "challenges" style="height: 100%; width: 100%;">{{module.challenges}}</div>
 
 
                                 <h3>Solutions</h3>
-                                {{module.solutions|markdown|safe}}
-                            
-                            </div> 
-                            
+                                <a class="btn btn-lg btn-common animated fadeInUp" data-toggle="collapse" href="#solutionsCollapse" role="button" aria-expanded="false" aria-controls="solutionsCollapse">
+                                  Click to see solutions
+                                </a>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="collapse" id="solutionsCollapse">
+                                  <div id = "solutions"  style="height: 100%; width: 100%;">{{module.solutions}}</div> 
+                                </div>
                         </article>
                         <div>
                         </div>
@@ -220,4 +223,41 @@
         </section>
         <!-- Material Blog Post section End -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/ace.js" integrity="sha256-CVkji/u32aj2TeC+D13f7scFSIfphw2pmu4LaKWMSY8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-python.js" integrity="sha256-MinL4s5SkQg5C0UzG79kKoTJMsTWOjdMX4v+i7bCPVI=" crossorigin="anonymous"></script>
+
+<script>
+    var editor = ace.edit("exercises",{
+      theme: "ace/theme/monokai",
+      mode: "ace/mode/python",
+      minLines: 3,
+      maxLines:100,
+      wrap: true,
+      autoScrollEditorIntoView: true
+    });
+
+    var editor2 = ace.edit("challenges",{
+      theme: "ace/theme/monokai",
+      mode: "ace/mode/python",
+      minLines: 3,
+      maxLines:100,
+      wrap: true,
+      autoScrollEditorIntoView: true
+    });
+
+    var editor3 = ace.edit("solutions",{
+      theme: "ace/theme/monokai",
+      mode: "ace/mode/python",
+      minLines: 3,
+      maxLines:100,
+      wrap: true,
+      autoScrollEditorIntoView: true
+    });
+
+    editor.setReadOnly(true);
+    editor2.setReadOnly(true);
+    editor3.setReadOnly(true);
+</script>
+
 {% endblock content %}
+

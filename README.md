@@ -18,14 +18,25 @@ You can tell that this worked by running ```pip list``` you should see something
 ```
 Package               Version
 --------------------- -------
-Django                2.2.4
-pip                   19.2.3
-pytz                  2019.2
-setuptools            41.2.0
-sqlparse              0.3.0
-virtualenv            16.7.4
-virtualenvwrapper-win 1.2.5
-wheel                 0.33.6
+dj-database-url       0.5.0  
+Django                2.2.7  
+django-heroku         0.3.1  
+django-jet            1.0.8  
+django-markdownx      2.0.28 
+django-pwa            1.0.5  
+gunicorn              20.0.4 
+Markdown              3.1.1  
+Pillow                6.2.1  
+pip                   19.3.1 
+psycopg2              2.8.4  
+python-dateutil       2.8.1  
+pytz                  2019.3 
+setuptools            41.2.0 
+six                   1.13.0 
+sqlparse              0.3.0  
+virtualenv            16.7.8 
+virtualenvwrapper-win 1.2.5  
+whitenoise            4.1.4  
 ```
 
 #### Accessing existing virtual environment

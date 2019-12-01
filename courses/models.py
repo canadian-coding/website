@@ -7,6 +7,7 @@ from posts.models import Author, language_choices
 
 class Course(models.Model):
     code = models.CharField(max_length = 9)
+    number = models.IntegerField()
     short_description = models.CharField(max_length = 75)
     full_description = MarkdownxField()
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
@@ -16,7 +17,7 @@ class Course(models.Model):
 
     def __str__(self):
         """Sets display in admin view"""
-        return f"{self.code}: {self.short_description}"
+        return f"{self.code}-{self.number}: {self.short_description}"
 
     class Meta:
         """Used to overwrite model attributes"""

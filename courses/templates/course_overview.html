@@ -3,7 +3,7 @@
 {% load markdown_extras %}
 {% load static %}
 
-{% block title %} {{course.code}} | Course{% endblock %}
+{% block title %} {{course.code}}-{{course.number}} | Course{% endblock %}
 
 {% block navlinks %}
               <li class="nav-item">
@@ -90,7 +90,7 @@
                         <div class="title-center">
                             <div class="title-middle">
                                 <h2 class="page-tagline">{{ course.language }}</h2>
-                                <h1 class="page-title" style="width: 350px;word-wrap: break-word;">{{ course.code }}</h1>
+                                <h1 class="page-title" style="width: 350px;word-wrap: break-word;">{{course.code}}-{{course.number}}</h1>
                             </div>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
 
                             {% for module in modules %}
                             <li>
-                                <a href="/courses/module/{{ module.id }}" style="color:green;">
+                                <a href="module/{{ module.number }}" style="color:green;">
                                     {{ module.number }}. {{ module.title }}
                                 </a>   
                             </li> <br>

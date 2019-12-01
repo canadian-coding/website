@@ -175,7 +175,7 @@
                               <li>
                               <div class="single-post-meta">
                                 <div id="module-metadata">
-                                <p>{{ module.course.code }}: {{ module.course.short_description }}</p>
+                                <p>{{module.course.code}}-{{module.course.number}}: {{ module.course.short_description }}</p>
                                   <p>Language: {{module.language|capfirst}}</p>
                               </div>
                             </div>
@@ -200,7 +200,7 @@
 
                             {% if module.previous_module %}
                             <li>Previous Module:
-                                <a href="/courses/module/{{ module.previous_module.id }}" style="color:green;">
+                                <a href="/courses/course/{{module.course.code}}-{{module.course.number}}/module/{{ module.previous_module.number }}" style="color:green;">
                                      {{ module.previous_module.number }}. {{ module.previous_module.title }}
                                 </a>   
                             </li> <br>
@@ -208,7 +208,7 @@
 
                             {% if module.next_module %}
                             <li>Next Module: 
-                                <a href="/courses/module/{{ module.next_module.id }}" style="color:green;">
+                                <a href="/courses/course/{{module.course.code}}-{{module.course.number}}/module/{{ module.next_module.number }}" style="color:green;">
                                     {{ module.next_module.number }}. {{ module.next_module.title }}
                                 </a>   
                             </li> <br>

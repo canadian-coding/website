@@ -69,7 +69,7 @@ def course_overview_by_code(request, code, number):
     """
     course = Course.objects.filter(number = number).get(code = code.upper())
     course_id = course.id 
-    modules = Module.objects.filter(id=course_id).order_by("number")
+    modules = Module.objects.filter(course=course_id).order_by("number")
     context = {
         'course': course,
         'modules': modules

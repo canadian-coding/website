@@ -228,11 +228,11 @@
                   <div class="sup-desc-wrap">
                     <div class="sup-desc-inner">
                       <div class="sup-link">
-                        <a class="left-link" href="/posts/details/{{post.id}}"><i class="fa fa-link"></i></a>
+                        <a class="left-link" href="/posts/post/{{post.id}}"><i class="fa fa-link"></i></a>
                         <a class="right-link" href="{{post.github_source}}" target="_blank"><i class="fa fa-github"></i></a>
                       </div>
                       <div class="sup-meta-wrap">
-                        <a class="sup-title" href="/posts/details/{{post.id}}">
+                        <a class="sup-title" href="/posts/post/{{post.id}}">
                           <h4 style="font-size">{{post.title|truncatechars:75}}</h4>
                         </a>
                         <p class="sup-description">{{post.subheading|truncatechars:125}}</p>
@@ -242,6 +242,27 @@
                 </div>
               </div>
             </div>
+
+            <!-- TODO: Uncomment when slugs have been created for all posts
+                <div class="portfoli-content">
+                  <div class="sup-desc-wrap">
+                    <div class="sup-desc-inner">
+                      <div class="sup-link">
+                        <a class="left-link" href="/posts/{{post.language}}/{{post.post_slug}}"><i class="fa fa-link"></i></a>
+                        <a class="right-link" href="{{post.github_source}}" target="_blank"><i class="fa fa-github"></i></a>
+                      </div>
+                      <div class="sup-meta-wrap">
+                        <a class="sup-title" href="/posts/{{post.language}}/{{post.post_slug}}">
+                          <h4 style="font-size">{{post.title|truncatechars:75}}</h4>
+                        </a>
+                        <p class="sup-description">{{post.subheading|truncatechars:125}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            -->
         {% endfor %}
 
             </div>
@@ -262,5 +283,4 @@ function monthDiff(d1, d2) {
     months += d2.getMonth();
     return months <= 0 ? 0 : months;
 }
-
 </script>

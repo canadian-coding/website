@@ -128,6 +128,12 @@
 
                             {% elif file.language == "c"%}
                             <h5>{{file.title}}_demo.c</h5>
+
+                            {% elif file.language == "batch"%}
+                            <h5>/{{file.title}}Demo.bat</h5>
+
+                            {% elif file.language == "shell"%}
+                            <h5>{{file.title}}Demo.sh</h5>
                             
                             {% endif %}
 
@@ -150,6 +156,12 @@
                                 {% elif file.language == "c"%}
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-c_cpp.js" integrity="sha256-eL+A+g74p1M4f0uZgCRQ+Oz/kMO+gM29SNAjoBStIWg=" crossorigin="anonymous"></script>
                                 
+                                {% elif file.language == "batch"%}
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-batchfile.js" integrity="sha256-VzI1U6EdLzS23FUIzZe/1e1baoZBfk1/757Nxm+zfOg=" crossorigin="anonymous"></script>
+
+                                {% elif file.language == "shell"%}
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/snippets/sh.js" integrity="sha256-C3CtXCKXsjw/juP5x/X0khN4etvjYFOJExkoUp3ndcU=" crossorigin="anonymous"></script>
+
                                 {% endif %}
                                 
                                 

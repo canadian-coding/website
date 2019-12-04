@@ -114,19 +114,19 @@
                             {% if files %}
                             <h3>Files</h3>
                             {% for file in files %}
-                            {% if post.language == "python"%}
+                            {% if file.language == "python"%}
                             <h5>{{file.title}}_demo.py</h5>
 
-                            {% elif post.language == "go"%}
+                            {% elif file.language == "go"%}
                             <h5>{{file.title}}Demo.go</h5>
 
-                            {% elif post.language == "javascript"%}
+                            {% elif file.language == "javascript"%}
                             <h5>{{file.title}}Demo.js</h5>
 
-                            {% elif post.language == "processing"%}
+                            {% elif file.language == "processing"%}
                             <h5>/{{file.title}}Demo/{{file.title}}Demo.pde</h5>
 
-                            {% elif post.language == "c"%}
+                            {% elif file.language == "c"%}
                             <h5>{{file.title}}_demo.c</h5>
                             
                             {% endif %}

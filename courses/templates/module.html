@@ -12,32 +12,23 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/posts">
-                  Posts
-                </a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="/services">
                   Services
                 </a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/courses">
-                  Courses
-                </a>
+              <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Learning</a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/posts">Posts</a>
+                        <a class="dropdown-item" href="/courses">Courses</a>
+
+                      </div>
               </li>
 {% endblock navlinks %}
 
 {% block content %}
 <style>
 
-.navbar-nav .nav-link {
-  color: #141414;
-  font-size: 14px;
-  margin-right: 18px;
-  font-weight: 400;
-  padding: 18px 0px;
-}
 #github{
       background:#141414;
     }

@@ -88,6 +88,8 @@ class DemoFiles(models.Model):
     contents = models.TextField()
     posts = models.ManyToManyField(Posts)
 
+    language = models.CharField(max_length = 100, choices = language_choices)
+
     def __str__(self):
         """Sets display in admin view"""
         return f"{self.title}"

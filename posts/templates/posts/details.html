@@ -135,19 +135,19 @@
                                 
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/ace.js" integrity="sha256-CVkji/u32aj2TeC+D13f7scFSIfphw2pmu4LaKWMSY8=" crossorigin="anonymous"></script>
                                 
-                                {% if post.language == "python"%}
+                                {% if file.language == "python"%}
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-python.js" integrity="sha256-MinL4s5SkQg5C0UzG79kKoTJMsTWOjdMX4v+i7bCPVI=" crossorigin="anonymous"></script>
                                 
-                                {% elif post.language == "go"%}
+                                {% elif file.language == "go"%}
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-golang.js" integrity="sha256-seinyyHa2YgAOt1gV2W7eBd8UjbsOMcsRIiNPK31HZY=" crossorigin="anonymous"></script>
 
-                                {% elif post.language == "javascript"%}
+                                {% elif file.language == "javascript"%}
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-javascript.js" integrity="sha256-9nVHCZW1SuyhaVgqmPk1XutGn+g/ASVBiVAheioldo4=" crossorigin="anonymous"></script>
 
-                                {% elif post.language == "processing"%}
+                                {% elif file.language == "processing"%}
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-java.js" integrity="sha256-1XEB2pIPtczUEj/9S7eq27qtCohpH125MWFxsf02bvU=" crossorigin="anonymous"></script> 
 
-                                {% elif post.language == "c"%}
+                                {% elif file.language == "c"%}
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-c_cpp.js" integrity="sha256-eL+A+g74p1M4f0uZgCRQ+Oz/kMO+gM29SNAjoBStIWg=" crossorigin="anonymous"></script>
                                 
                                 {% endif %}

@@ -14,6 +14,8 @@ language_choices = [
     ("javascript", "JS"),
     ("html", "HTML"),
     ("processing", "Processing"),
+    ("batch", "Batch"),
+    ("shell", "Shell Script"),
 ]
 
 class Author(models.Model):

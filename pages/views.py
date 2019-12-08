@@ -11,3 +11,6 @@ def service(request):
 
 def terms_of_service(request):
     return render(request, "terms-of-service.html")
+
+def google_verification(request):
+    return render(request, "google4872331c416f8761.html")

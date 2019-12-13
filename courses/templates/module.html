@@ -1,6 +1,8 @@
 {% extends 'app-shell.html' %}
 
 {% load markdown_extras %}
+{% load file_saving %}
+
 {% load static %}
 
 {% block title %} {{module.number}} {{ module.title }} | Module{% endblock %}
@@ -104,24 +106,24 @@
                                 {{module.content|markdown|safe}}
 
                                 <h3>Exercises 
-                                  <!-- <a style="display: inline-block; width:30px; height:30px;" onclick="downloadExercises()">
+                                  <a style="display: inline-block; width:30px; height:30px;" onclick="downloadFile('exercises')">
                                       <img src="{% static 'img/icons/download.svg'%}">
-                                  </a> -->
+                                  </a>
                                 </h3>
                                 <div id = "exercises" style="height: 100%; width: 100%;">{{module.exercises}}</div>
 
                                 <h3>Challenges
-                                    <!-- <a style="display: inline-block; width:30px; height:30px;" onclick="downloadChallenges()">
+                                    <a style="display: inline-block; width:30px; height:30px;" onclick="downloadFile('challenges')">
                                         <img src="{% static 'img/icons/download.svg'%}">
-                                    </a> -->
+                                    </a>
                                 </h3>
                                 <div id = "challenges" style="height: 100%; width: 100%;">{{module.challenges}}</div>
 
 
                                 <h3>Solutions
-                                  <!-- <a style="display: inline-block; width:30px; height:30px;" onclick="downloadSolutions()">
+                                  <a style="display: inline-block; width:30px; height:30px;" onclick="downloadFile('solutions')">
                                     <img src="{% static 'img/icons/download.svg'%}">
-                                  </a> -->
+                                  </a>
                                 </h3> 
 
 
@@ -269,181 +271,54 @@
 <!-- File Saving-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js" integrity="sha256-FPJJt8nA+xL4RU6/gsriA8p8xAeLGatoyTjldvQKGdE=" crossorigin="anonymous"></script>
 
-<!--Exercises-->
-{% if module.language == "python"%}
+
+
   <script>
-    function downloadExercises(){
-      var exercise = new Blob([String.raw`{{module.exercises|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(exercise, "{{module.course.code}}-{{module.course.number}} {{module.title}}: exercises.py");
-    }  
-  </script>
 
+      if ("{{module.language}}".includes("python")){
+        var extension = ".py"; }
+
+      else if ("{{module.language}}".includes("go")){
+          var extension = ".go"; }
+
+      else if ("{{module.language}}".includes("javascript")){
+        var extension = ".js"; }
+
+      else if ("{{module.language}}".includes("processing")){
+          var extension = ".c"; }
+
+      else if ("{{module.language}}".includes("c")){
+          var extension = ".c"; }
+
+      else{
+            var extension = ".txt"; }
+    function downloadFile(filename){
+
+      if(filename.includes("solutions")){
+        var fileContent = String.raw`{{module.solutions|filefilter|safe}}`;
+          }
       
-{% elif module.language == "go"%}
-<script>
-    function downloadExercises(){
-      var exercise = new Blob([String.raw`{{module.exercises|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(exercise, "{{module.course.code}}-{{module.course.number}} {{module.title}}: exercises.go");
-    }  
-  </script>
-
-{% elif module.language == "javascript"%}
-<script>
-    function downloadExercises(){
-      var exercise = new Blob([String.raw`{{module.exercises|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(exercise, "{{module.course.code}}-{{module.course.number}} {{module.title}}: exercises.js");
-    }  
-  </script>
-
-{% elif module.language == "c"%}
-<script>
-    function downloadExercises(){
-      var exercise = new Blob([String.raw`{{module.exercises|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(exercise, "{{module.course.code}}-{{module.course.number}} {{module.title}}: exercises.c");
-    }  
-  </script>
-
-{% elif module.language == "processing"%}
-<script>
-    function downloadExercises(){
-      var exercise = new Blob([String.raw`{{module.exercises|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(exercise, "{{module.course.code}}-{{module.course.number}} {{module.title}}: exercises.pde");
-    }  
-  </script>
-
-{% else %}
-<script>
-    function downloadExercises(){
-      var exercise = new Blob([String.raw`{{module.exercises|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(exercise, "{{module.course.code}}-{{module.course.number}} {{module.title}}: exercises.txt");
-    }  
-  </script>
-
-{% endif %}
-
-
-<!--Challenges-->
-{% if module.language == "python"%}
-  <script>
-    function downloadChallenges(){
-      var challenge = new Blob([String.raw`{{module.challenges|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(challenge, "{{module.course.code}}-{{module.course.number}} {{module.title}}: challenges.py");
-    }  
-  </script>
-
+      else if(filename.includes("exercises")){
+        var fileContent = String.raw`{{module.exercises|filefilter|safe}}`;
+          }
       
-{% elif module.language == "go"%}
-<script>
-    function downloadChallenges(){
-      var challenge = new Blob([String.raw`{{module.challenges|safe}}`],
+      else if(filename.includes("challenges")){
+        var fileContent = String.raw`{{module.challenges|filefilter|safe}}`;
+          }
+      else{
+        var fileContent = "Couldn't find file content";
+      }
+
+      var blob = new Blob([`${fileContent}`],
     { type: "text/plain;charset=utf-8" });
-    saveAs(challenge, "{{module.course.code}}-{{module.course.number}} {{module.title}}: challenges.go");
+    saveAs(blob, "{{module.course.code}}-{{module.course.number}} {{module.title}}:" + filename + extension);
     }  
   </script>
 
-{% elif module.language == "javascript"%}
-<script>
-    function downloadChallenges(){
-      var challenge = new Blob([String.raw`{{module.challenges|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(challenge, "{{module.course.code}}-{{module.course.number}} {{module.title}}: challenges.js");
-    }  
-  </script>
-
-{% elif module.language == "c"%}
-<script>
-    function downloadChallenges(){
-      var challenge = new Blob([String.raw`{{module.challenges|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(challenge, "{{module.course.code}}-{{module.course.number}} {{module.title}}: challenges.c");
-    }  
-  </script>
-
-{% elif module.language == "processing"%}
-<script>
-    function downloadChallenges(){
-      var challenge = new Blob([String.raw`{{module.challenges|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(challenge, "{{module.course.code}}-{{module.course.number}} {{module.title}}: challenges.pde");
-    }  
-  </script>
-
-{% else %}
-<script>
-    function downloadChallenges(){
-      var challenge = new Blob([String.raw`{{module.challenges|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(challenge, "{{module.course.code}}-{{module.course.number}} {{module.title}}: challenges.txt");
-    }  
-  </script>
-
-{% endif %}
 
 
-<!--Solutions-->
-{% if module.language == "python"%}
-  <script>
-    function downloadSolutions(){
-      var solution = new Blob([String.raw`{{module.solutions|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(solution, "{{module.course.code}}-{{module.course.number}} {{module.title}}: solutions.py");
-    }  
-  </script>
 
-      
-{% elif module.language == "go"%}
-<script>
-    function downloadSolutions(){
-      var solution = new Blob([String.raw`{{module.solutions|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(solution, "{{module.course.code}}-{{module.course.number}} {{module.title}}: solutions.go");
-    }  
-  </script>
 
-{% elif module.language == "javascript"%}
-<script>
-    function downloadSolutions(){
-      var solution = new Blob([String.raw`{{module.solutions|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(solution, "{{module.course.code}}-{{module.course.number}} {{module.title}}: solutions.js");
-    }  
-  </script>
-
-{% elif module.language == "c"%}
-<script>
-    function downloadSolutions(){
-      var solution = new Blob([String.raw`{{module.solutions|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(solution, "{{module.course.code}}-{{module.course.number}} {{module.title}}: solutions.c");
-    }  
-  </script>
-
-{% elif module.language == "processing"%}
-<script>
-    function downloadSolutions(){
-      var solution = new Blob([String.raw`{{module.solutions|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(solution, "{{module.course.code}}-{{module.course.number}} {{module.title}}: solutions.pde");
-    }  
-  </script>
-
-{% else %}
-<script>
-    function downloadSolutions(){
-      var solution = new Blob([String.raw`{{module.solutions|safe}}`],
-    { type: "text/plain;charset=utf-8" });
-    saveAs(solution, "{{module.course.code}}-{{module.course.number}} {{module.title}}: solutions.txt");
-    }  
-  </script>
-
-{% endif %}
 
 
 {% endblock content %}

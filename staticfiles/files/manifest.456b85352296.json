@@ -1,0 +1,16 @@
+{
+    "name": "Canadian Coding",
+    "short_name": "Canadian Coding",
+    "theme_color": "#2e7d32",
+    "background_color": "#141414",
+    "display": "standalone",
+    "start_url": "/",
+    "lang": "en-US",
+    "icons": [
+        {
+          "src": "../img/icons/canadian-coding-logo-icon-192x-192x.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        }
+      ]
+  }

@@ -21,7 +21,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("", include('pages.urls')), # Where index.html is stored
-    path('', include('pwa.urls')), # Necessary to properly serve app as a PWA
     path("jet/", include("jet.urls", "jet")), # Used by django-jet for admin UI elements
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('posts/', include('posts.urls')), # Forward to posts templates

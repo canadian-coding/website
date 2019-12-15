@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 {% load static %}
-{% load pwa %}
 <head>
     
     <!-- Manifest and Metadata-->
@@ -21,7 +20,20 @@
     <meta property="og:image" content="{% static 'img/canadian-coding-logo.png' %}"> 
 
     <!-- PWA manifest data -->
-    {% progressive_web_app_meta %}
+    <link rel="manifest" href="{% static 'files/manifest.json' %}">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Canadian Coding">
+    <meta name="apple-mobile-web-app-title" content="Canadian Coding">
+    <meta name="theme-color" content="#2e7d32">
+    <meta name="msapplication-navbutton-color" content="#2e7d32">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" href="{% static 'img/icons/canadian-coding-logo-icon-192x-192x.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'img/icons/canadian-coding-logo-icon-192x-192x.png' %}">
 
     <!-- CSS Files -->
 

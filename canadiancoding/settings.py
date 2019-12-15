@@ -19,12 +19,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY", "0$ke!x1bz5cj0mpzo1zfx4omw-c9iqw%m95zb)(2@ddg5s+3!f")
+
+ALLOWED_HOSTS = ['*']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -36,8 +36,6 @@ INSTALLED_APPS = [
     'markdownx', # Allows for editing and creating markdown content
     'jet.dashboard',
     'jet', # Django admin theme override
-    'pwa', # Sets app to be PWA compliant
-    'whitenoise.runserver_nostatic', # Serving static files
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -131,9 +129,9 @@ STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
    ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Ability to change theme in admin view
 JET_THEMES = [
@@ -174,31 +172,6 @@ JET_THEMES = [
     },
 
 ]
-
-# PWA configuration
-
-PWA_APP_NAME = 'Canadian Coding'
-PWA_APP_DESCRIPTION = "Welcome to canadiancoding.ca a site with development tips for humans."
-PWA_APP_THEME_COLOR = '#141414'
-PWA_APP_BACKGROUND_COLOR = '#f0f0f0'
-PWA_APP_DISPLAY = 'standalone'
-PWA_APP_SCOPE = '/',
-PWA_APP_ORIENTATION = 'any'
-PWA_APP_START_URL = '/'
-PWA_APP_ICONS = [
-    {
-        'src': '/static/img/icons/canadian-coding-logo-icon-192x-192x.png',
-        'sizes': '160x160'
-    }
-]
-PWA_APP_SPLASH_SCREEN = [
-    {
-        'src': '/static/img/icons/canadian-coding-logo.png',
-        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
-    }
-]
-PWA_APP_DIR = 'ltr'
-PWA_APP_LANG = 'en-US'
 
 
 # Heroku Setup

@@ -9,7 +9,6 @@ virtualenvwrapper; platform_system != "Windows"
 django-markdownx
 django-jet
 Markdown
-django-pwa
 django-heroku
 gunicorn
 

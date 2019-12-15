@@ -1302,14 +1302,14 @@ footer .menu li a:hover {
 
 /* Transparent Navigations */
 .nav-bg-default {
-  background: url("../images/nav-bg-default.jpg");
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .nav-bg-inverse {
-  background: url("../images/nav-bg-inverse.jpg");
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

@@ -21,10 +21,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "0$ke!x1bz5cj0mpzo1zfx4omw-c9iqw%m95zb)(2@ddg5s+3!f")
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost','0.0.0.0',"canadiancoding.ca","canadian-coding-website.herokuapp.com"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 # Application definition
@@ -131,7 +131,8 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage'
+
 
 # Ability to change theme in admin view
 JET_THEMES = [
@@ -173,6 +174,22 @@ JET_THEMES = [
 
 ]
 
-
+import logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        },
+    },
+}
+logging.debug("yeet")
 # Heroku Setup
 django_heroku.settings(locals())

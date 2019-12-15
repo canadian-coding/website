@@ -1,0 +1,35 @@
+{% extends 'app-shell.html' %}
+{% load static %}
+
+
+{% block title %}Home{% endblock title%}
+
+{% block content %}
+
+      <!-- sliders -->
+      <div id="sliders">
+        <div class="full-width">
+          <!-- light slider -->
+          <div id="light-slider" class="carousel slide">
+            <div id="carousel-area">
+              <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                  
+                    <img src="{% static 'img/blank-dark-background.jpg' %}" alt="">
+                    <div class="carousel-caption">
+                      <h3 class="slide-title animated fadeInDown"><span>500 Server Error</span></h3>
+                      <h5 class="slide-text animated fadeIn">Oh boy, someones sleeping on the job, we'll get this fixed in a jiffy bud.</h5>
+                        <a href="/" class="btn btn-lg btn-common animated fadeInUp">Head on Home</a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End sliders -->
+
+{% endblock content %}

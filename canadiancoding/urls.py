@@ -19,6 +19,8 @@ from django.shortcuts import render
 
 from django.conf.urls.static import static
 
+
+
 urlpatterns = [
     path("", include('pages.urls')), # Where index.html is stored
     path("jet/", include("jet.urls", "jet")), # Used by django-jet for admin UI elements

@@ -34,8 +34,8 @@ INSTALLED_APPS = [
     'courses', # Contains all dynamic and static pages related to courses and modules
     'pages', # Contains all static pages that are not post related
     'markdownx', # Allows for editing and creating markdown content
-    'jet.dashboard',
-    'jet', # Django admin theme override
+    # 'jet.dashboard',
+    # 'jet', # Django admin theme override
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

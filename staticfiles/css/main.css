@@ -92,7 +92,7 @@ p {
 }
 
 ul, li {
-  padding: 0;
+  margin-left: 15px;
 }
 
 ul, ol {
@@ -138,6 +138,7 @@ ul, ol {
 
 ol li {
   margin-bottom: 7px;
+  margin-left: 15px;
 }
 
 li {

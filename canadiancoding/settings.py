@@ -16,10 +16,9 @@ import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
+# Secret Key should be a defined environment variable before pushing to prod
 
-SECRET_KEY = os.environ.get("SECRET_KEY", "0$ke!x1bz5cj0mpzo1zfx4omw-c9iqw%m95zb)(2@ddg5s+3!f")
+SECRET_KEY = os.environ.get("SECRET_KEY", "h=fe2puya549v50l)f3j0)*2nu6$wo5^e4zz^$8ddyr4yii600")
 
 ALLOWED_HOSTS = ['localhost','0.0.0.0',"canadiancoding.ca","canadian-coding-website.herokuapp.com"]
 
@@ -34,8 +33,6 @@ INSTALLED_APPS = [
     'courses', # Contains all dynamic and static pages related to courses and modules
     'pages', # Contains all static pages that are not post related
     'markdownx', # Allows for editing and creating markdown content
-    # 'jet.dashboard',
-    # 'jet', # Django admin theme override
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -174,22 +171,25 @@ JET_THEMES = [
 
 ]
 
-import logging
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
+if SECRET_KEY == "h=fe2puya549v50l)f3j0)*2nu6$wo5^e4zz^$8ddyr4yii600": # If running locally
+    import logging
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'console': {
+                'class': 'logging.StreamHandler',
+            },
         },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        'loggers': {
+            'django': {
+                'handlers': ['console'],
+                'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+            },
         },
-    },
-}
-logging.debug("yeet")
+    }
+    logging.warning("Local environment setting assumed, if you are seeing this in production logs there is a problem")
+
+print(SECRET_KEY)
 # Heroku Setup
 django_heroku.settings(locals())

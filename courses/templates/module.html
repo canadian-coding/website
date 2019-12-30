@@ -5,7 +5,7 @@
 
 {% load static %}
 
-{% block title %} {{module.number}} {{ module.title }} | Module{% endblock %}
+{% block title %} {{module.course.code}}-{{module.course.number}} | Module {{module.number}}: {{ module.title }}{% endblock %}
 
 {% block navlinks %}
               <li class="nav-item">

@@ -165,9 +165,11 @@
                                 <a href="{{course.github_link}}" style="display: inline-block; width:35px; height:35px;" target="_blank">
                                     <img src="{% static 'img/icons/github-logo.png'%}">
                                 </a>
+                                {% if course.youtube_playlist_link %}
                                 <a href="{{course.youtube_playlist_link}}" style="display: inline-block; width:35px; height:35px;" target="_blank"> 
-                                    <!--TODO Change to youtube logo--><img src="{% static 'img/icons/instagram-logo.png'%}">
+                                    <!--TODO Change to youtube logo--><img src="{% static 'img/icons/youtube-logo.png'%}">
                                 </a>
+                                {%endif%}
                               </li>
                             </ul>
                         </aside>

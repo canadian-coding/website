@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'pages', # Contains all static pages that are not post related
     'markdownx', # Allows for editing and creating markdown content
     'programming_languages',
+    'projects',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

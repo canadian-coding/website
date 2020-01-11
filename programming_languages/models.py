@@ -47,7 +47,7 @@ class Language(models.Model):
 
     def __str__(self):
         """Sets display in admin view"""
-        return self.title
+        return self.name
 
     class Meta:
         """Used to overwrite model attributes"""
@@ -61,7 +61,7 @@ class Paradigms(models.Model):
 
     def __str__(self):
         """Sets display in admin view"""
-        return self.title
+        return self.name
         
     class Meta:
         """Used to overwrite model attributes"""
@@ -75,7 +75,7 @@ class Typing(models.Model):
 
     def __str__(self):
         """Sets display in admin view"""
-        return self.title
+        return self.name
         
     class Meta:
         """Used to overwrite model attributes"""
@@ -89,7 +89,7 @@ class Syntax(models.Model):
 
     def __str__(self):
         """Sets display in admin view"""
-        return self.title
+        return self.name
         
     class Meta:
         """Used to overwrite model attributes"""

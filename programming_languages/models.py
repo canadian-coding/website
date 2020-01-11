@@ -4,13 +4,6 @@ from datetime import datetime
 
 from markdownx.models import MarkdownxField # From django-markdownx
 
-typing_disciplines = [
-    #(key, displayed_value)
-    ("weakly-typed", "Weakly Typed"),
-    ("strongly-typed", "Strongly Typed"),
-    ("statically-typed", "statically Typed"),
-    ("dynamically-typed", "Dynamically Typed"),
-]
 
 paradigms = [
     #(key, displayed_value)
@@ -21,28 +14,24 @@ paradigms = [
     ("procedural", "Procedural"),
 ]
 
-syntax_concepts = [
-    #(key, displayed_value)
-    ("semicolons", "Semicolons"),
-    ("indentation", "Indentation"),
-    ("curly-braces", "Curly Braces"),
-    ("slash-comments", "Slash Comments"),
-    ("hash-comments", "Hash Comments"),
-]
-
 class Language(models.Model):
     """Represents programming languages"""
+    # Language metadata
     name = models.CharField(max_length = 75)
-    website = models.URLField(blank=True)
+    website = models.URLField(blank = True)
     language_creation = models.DateField()
     used_by = models.CharField(max_length = 200)
+    description = MarkdownxField(blank = True)
 
+    # Language Structure and Syntax
     resources = MarkdownxField()
     commenting = MarkdownxField()
     variables = MarkdownxField()
     functions = MarkdownxField()
     running = MarkdownxField()
+    projects = MarkdownxField(blank = True)
 
+    # More metadata
     last_modified = models.DateTimeField(auto_now = True)
 
     def __str__(self):
